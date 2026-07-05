@@ -1,0 +1,37 @@
+<%# alternate image side by index: even = image left, odd = image right %>
+<article class="grid grid-cols-1 border-t border-line md:grid-cols-2">
+  <div class="relative overflow-hidden <%= index.odd? ? "md:order-2" : "" %>"
+       <%= (project.lightbox? ? 'data-controller="lightbox"' : "").html_safe %>>
+    <img src="<%= asset_media(project.cover) %>" alt="<%= project.title %>"
+         class="h-full min-h-[460px] w-full object-cover transition duration-300 hover:scale-105 <%= project.lightbox? ? "cursor-zoom-in" : "" %>"
+         <%= (project.lightbox? ? 'data-lightbox-target="cover" data-action="click->lightbox#open"' : "").html_safe %>>
+    <% if project.lightbox? %>
+      <span class="absolute bottom-3.5 right-3.5 rounded-full bg-black/60 px-2.5 py-1.5 font-mono text-xs text-white backdrop-blur">
+        &#9635; <%= project.gallery.size %> images<%= " &middot; video".html_safe if project.videos.any? %>
+      </span>
+      <template data-lightbox-target="data">
+        <%= tag.div(nil, data: { images: ([project.cover] + project.gallery).to_json, videos: project.videos.to_json, title: project.title }) %>
+      </template>
+    <% end %>
+  </div>
+  <div class="flex flex-col justify-center px-10 py-11">
+    <div class="text-[56px] font-bold leading-none tracking-tight text-[#f0e0d9]"><%= format("%02d", project.order) %></div>
+    <h3 class="mb-3 mt-0.5 text-[29px] font-semibold tracking-tight"><%= project.title %></h3>
+    <div class="prose-sm max-w-none text-[15px] leading-relaxed text-ink2"><%= project.body_html.html_safe %></div>
+    <% if project.quote.present? %>
+      <blockquote class="mt-5 border-l-2 border-coral pl-4 text-[15px] italic text-ink">
+        &ldquo;<%= project.quote %>&rdquo;
+        <div class="mt-2 font-mono text-xs not-italic text-coral-d"><%= project.quote_author %></div>
+      </blockquote>
+    <% end %>
+    <div class="mt-4 flex flex-wrap items-center gap-2">
+      <% project.tech.each do |t| %>
+        <span class="rounded border border-line px-2 py-0.5 font-mono text-[11px] text-ink2"><%= t %></span>
+      <% end %>
+      <span class="ml-auto font-mono text-[11px] text-muted"><%= [project.role, project.period].compact.join(" &middot; ").html_safe %></span>
+    </div>
+    <% if project.credit.present? %>
+      <div class="mt-2 font-mono text-[11px] text-muted"><%= project.credit %></div>
+    <% end %>
+  </div>
+</article>
