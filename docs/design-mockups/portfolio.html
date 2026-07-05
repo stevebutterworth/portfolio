@@ -1,0 +1,110 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  .pf { --ink:#0B0B0C; --mut:#6b6b70; --line:#e2ddd0; --coral:#E0613A; --coral-d:#c2502e; --bg:#F9F6F0; }
+  .pf h2 { margin-bottom:2px; }
+  .pf .lead { color:#666; font-size:14px; margin-bottom:16px; }
+  .pf .frame { border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.12); box-shadow:0 18px 40px -22px rgba(0,0,0,.35); }
+  .pf .chrome { height:30px; background:#e4dfd3; display:flex; align-items:center; gap:6px; padding:0 12px; }
+  .pf .chrome i { width:10px;height:10px;border-radius:50%;background:#c8c2b3; }
+  .pf .chrome .u { margin-left:14px; font:12px 'Space Mono',monospace; color:#8a8477; }
+
+  .pg { background:var(--bg); color:var(--ink); font-family:'Space Grotesk',system-ui,sans-serif; }
+  .nav { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(249, 246, 240,.85); backdrop-filter:blur(8px); z-index:2; }
+  .ident { font-weight:600; font-size:15px; display:flex; align-items:center; gap:10px; }
+  .ident .mark { font-family:'Space Mono',monospace; font-weight:700; color:var(--coral); font-size:17px; letter-spacing:-.03em; }
+  .links { display:flex; gap:26px; align-items:center; }
+  .links a { font-size:12px; text-transform:uppercase; letter-spacing:.09em; color:var(--ink); text-decoration:none; }
+  .links a.on { color:var(--coral); }
+
+  /* split full-width hero — full-width grid matching the projects, so the right
+     column shares the SAME left edge as the project text below */
+  .hero { display:grid; grid-template-columns:1fr 1fr; align-items:end; border-bottom:1px solid var(--line); }
+  .hero .left { padding:64px 40px 48px; }
+  .hero .right { padding:64px 40px 48px; }
+  .hero .eyebrow { font:11px 'Space Mono',monospace; letter-spacing:.18em; text-transform:uppercase; color:var(--coral-d); }
+  .hero h1 { font-size:50px; font-weight:500; letter-spacing:-.03em; line-height:1.03; margin:14px 0 0; }
+  .hero .right p { color:#3a3733; font-family:'Inter'; font-size:15.5px; line-height:1.62; }
+  .hero .right .avail { margin-top:16px; font:11px 'Space Mono',monospace; color:#159a5b; display:flex; align-items:center; gap:7px; }
+  .hero .right .avail .dot { width:7px;height:7px;border-radius:50%;background:#159a5b;box-shadow:0 0 0 3px rgba(21,154,91,.18); }
+
+  .sechead { display:flex; justify-content:space-between; align-items:baseline; padding:32px 40px 4px; }
+  .sechead .t { font:12px 'Space Mono',monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--coral-d); }
+  .tag { font:11px 'Space Mono',monospace; padding:3px 8px; border:1px solid var(--line); border-radius:5px; color:#4a463f; background:rgba(255,255,255,.35); }
+
+  .feat { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); }
+  .feat .media { order:1; } .feat .txt { order:2; }
+  .feat.alt .media { order:2; } .feat.alt .txt { order:1; }
+  .feat .media { position:relative; overflow:hidden; }
+  .feat .media img { width:100%; height:100%; object-fit:cover; display:block; min-height:460px; transition:transform .35s ease; }
+  .feat .media:hover img { transform:scale(1.04); }
+  .feat .media.has-gal { cursor:zoom-in; }
+  .feat .media .badge { position:absolute; right:14px; bottom:14px; display:flex; align-items:center; gap:6px; font:11px 'Space Mono',monospace; color:#fff; background:rgba(11,11,12,.6); backdrop-filter:blur(6px); padding:6px 10px; border-radius:20px; }
+  .feat .txt { padding:44px 40px; display:flex; flex-direction:column; justify-content:center; }
+  .idx { font-size:56px; line-height:1; letter-spacing:-.02em; font-weight:700; color:#e6d3c8; }
+  .ptitle { font-size:29px; font-weight:600; letter-spacing:-.02em; margin:2px 0 12px; }
+  .pdesc { font-family:'Inter'; color:#48453f; font-size:15px; line-height:1.62; }
+  .meta { display:flex; gap:8px; margin-top:16px; flex-wrap:wrap; align-items:center; }
+  .role { font:11px 'Space Mono',monospace; color:var(--mut); margin-left:auto; }
+  .q1 { margin-top:20px; padding-left:18px; border-left:2px solid var(--coral); }
+  .q1 p { font-family:'Inter'; font-size:15px; line-height:1.5; color:#2a2620; font-style:italic; }
+  .q1 .who { font:11px 'Space Mono',monospace; color:var(--coral-d); margin-top:8px; }
+
+  .foot { padding:44px 40px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:flex-end; color:var(--mut); font-size:13px; font-family:'Inter'; }
+  .foot .big { font-family:'Space Grotesk'; font-size:30px; color:var(--ink); font-weight:500; letter-spacing:-.025em; }
+  .foot .big .mark { font-family:'Space Mono',monospace; color:var(--coral); }
+  .foot .rt { text-align:right; line-height:1.9; }
+  .foot .rt a { color:var(--ink); text-decoration:none; }
+</style>
+
+<div class="pf">
+  <h2>Portfolio &mdash; 50/50 hero + warm background</h2>
+  <p class="lead">Hero is now a true <b>50/50</b> so the intro text lines up exactly with the edge of the project images below (no more overhang). Body background switched to <b>#F9F6F0</b>. Everything else as locked.</p>
+
+  <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="u">steveb.io</span></div>
+  <div class="pg">
+    <div class="nav"><div class="ident"><span class="mark">//</span>Steve Butterworth</div><div class="links"><a class="on">Work</a><a>CV</a><a>Writing</a><a>Contact</a></div></div>
+
+    <div class="hero">
+      <div class="left"><div class="eyebrow">Software engineer &middot; creative technologist</div><h1>I build the software behind brand activations people remember.</h1></div>
+      <div class="right"><p>15 years shipping web apps, native apps and interactive installations &mdash; usually the technical lead turning a big creative idea into something that actually runs at scale, on time, in the wild.</p><div class="avail"><span class="dot"></span>AVAILABLE FOR WORK &mdash; Q3 2026</div></div>
+    </div>
+
+    <div class="sechead"><span class="t">// Selected work</span><span class="t">05 projects</span></div>
+
+    <div class="feat"><div class="media has-gal"><img src="https://picsum.photos/seed/dg1/760/620"><span class="badge">&#9635; 6 images &middot; video</span></div>
+      <div class="txt"><div class="idx">01</div><div class="ptitle">Aurora Global Launch</div>
+        <p class="pdesc">Real-time launch microsite for a worldwide product reveal. I led the build: a Rails&nbsp;+&nbsp;Hotwire backend, a live view-counter over Turbo Streams, and edge-caching that held as traffic spiked to 400k concurrent on the night &mdash; zero downtime.</p>
+        <div class="q1"><p>&ldquo;Steve is the rare engineer who gets the creative and still ships the hard thing &mdash; on the night it just worked.&rdquo;</p><div class="who">— Creative Director, Aurora</div></div>
+        <div class="meta"><span class="tag">Rails</span><span class="tag">Hotwire</span><span class="tag">Turbo Streams</span><span class="role">Tech lead &middot; 2025</span></div></div></div>
+
+    <div class="feat alt"><div class="media has-gal"><img src="https://picsum.photos/seed/dg2/760/620"><span class="badge">&#9635; 4 images</span></div>
+      <div class="txt"><div class="idx">02</div><div class="ptitle">Meridian AR Experience</div>
+        <p class="pdesc">An iOS AR app for an in-store activation across 30 flagship stores. Swift/ARKit client plus a custom Metal render pipeline to hold a sub-16ms frame budget on three-year-old devices.</p>
+        <div class="q1"><p>&ldquo;The most technically ambitious retail piece we&rsquo;ve shipped, and it never dropped a frame.&rdquo;</p><div class="who">— Head of Innovation, Meridian</div></div>
+        <div class="meta"><span class="tag">Swift</span><span class="tag">ARKit</span><span class="tag">Metal</span><span class="role">iOS lead &middot; 2024</span></div></div></div>
+
+    <div class="feat"><div class="media"><img src="https://picsum.photos/seed/dg3/760/620"></div>
+      <div class="txt"><div class="idx">03</div><div class="ptitle">Nimbus Festival Ops</div>
+        <p class="pdesc">Companion app plus a live operations dashboard used by 200 staff across a festival weekend. Turbo-driven realtime, offline-first, one steady SQLite writer all weekend.</p>
+        <div class="q1"><p>&ldquo;Our ops team finally had one screen that told the truth in real time.&rdquo;</p><div class="who">— Festival Operations Lead, Nimbus</div></div>
+        <div class="meta"><span class="tag">Rails</span><span class="tag">SQLite</span><span class="tag">Solid Queue</span><span class="role">Full stack &middot; 2024</span></div></div></div>
+
+    <div class="feat alt"><div class="media has-gal"><img src="https://picsum.photos/seed/dg4/760/620"><span class="badge">&#9635; 8 images &middot; video</span></div>
+      <div class="txt"><div class="idx">04</div><div class="ptitle">Vantage Commerce Replatform</div>
+        <p class="pdesc">Rebuilt a legacy storefront on Rails&nbsp;8 + SQLite + Kamal: 3&times; faster pages, one-command deploys, and half the previous infra bill &mdash; all with a leaner codebase the client&rsquo;s own team could own.</p>
+        <div class="q1"><p>&ldquo;He made our stack boring in the best way &mdash; fast, cheap to run, and easy to hand over.&rdquo;</p><div class="who">— CTO, Vantage</div></div>
+        <div class="meta"><span class="tag">Rails</span><span class="tag">Stimulus</span><span class="tag">Kamal</span><span class="role">Lead &middot; 2023</span></div></div></div>
+
+    <div class="feat"><div class="media"><img src="https://picsum.photos/seed/dg5/760/620"></div>
+      <div class="txt"><div class="idx">05</div><div class="ptitle">Halo Interactive Installation</div>
+        <p class="pdesc">Motion-reactive WebGL installation for a flagship launch event. Three.js front end, Node signalling layer, a steady 60fps across a wall of synced screens with live camera input.</p>
+        <div class="q1"><p>&ldquo;It drew a crowd all night. Technically flawless, and genuinely beautiful.&rdquo;</p><div class="who">— Experiential Producer, Halo</div></div>
+        <div class="meta"><span class="tag">Three.js</span><span class="tag">WebGL</span><span class="tag">Node</span><span class="role">Creative tech &middot; 2023</span></div></div></div>
+
+    <div class="foot"><div class="big"><span class="mark">//</span> Let&rsquo;s build something.</div><div class="rt"><a>steve@steveb.io</a><br><a>LinkedIn</a> &middot; <a>GitHub</a><br><span style="color:#999">&copy; 2026 Steve Butterworth</span></div></div>
+  </div></div>
+
+</div>

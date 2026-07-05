@@ -1,0 +1,137 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  .cv { --ink:#0B0B0C; --mut:#6b6b70; --line:#e2ddd0; --coral:#E0613A; --coral-d:#c2502e; --bg:#F9F6F0; }
+  .cv h2 { margin-bottom:2px; }
+  .cv .lead { color:#666; font-size:14px; margin-bottom:16px; }
+  .cv .frame { border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.12); box-shadow:0 18px 40px -22px rgba(0,0,0,.35); }
+  .cv .chrome { height:30px; background:#e4dfd3; display:flex; align-items:center; gap:6px; padding:0 12px; }
+  .cv .chrome i { width:10px;height:10px;border-radius:50%;background:#c8c2b3; }
+  .cv .chrome .u { margin-left:14px; font:12px 'Space Mono',monospace; color:#8a8477; }
+
+  .pg { background:var(--bg); color:var(--ink); font-family:'Space Grotesk',system-ui,sans-serif; }
+  .nav { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; border-bottom:1px solid var(--line); }
+  .ident { font-weight:600; font-size:15px; display:flex; align-items:center; gap:10px; }
+  .ident .mark { font-family:'Space Mono',monospace; font-weight:700; color:var(--coral); font-size:17px; letter-spacing:-.03em; }
+  .links { display:flex; gap:26px; }
+  .links a { font-size:12px; text-transform:uppercase; letter-spacing:.09em; color:var(--ink); text-decoration:none; }
+  .links a.on { color:var(--coral); }
+
+  .lbl { font:11px 'Space Mono',monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--coral-d); }
+  .seclbl { font:12px 'Space Mono',monospace; letter-spacing:.18em; text-transform:uppercase; color:var(--coral); display:block; }
+  .seclbl .m { color:var(--coral); opacity:.75; }
+  .seclbl.spaced { margin-top:40px; padding-top:22px; border-top:1px solid var(--line); }
+
+  .btn { font:12px 'Space Mono',monospace; text-transform:uppercase; letter-spacing:.08em; padding:9px 14px; border-radius:8px; display:inline-flex; align-items:center; gap:8px; cursor:pointer; text-decoration:none; }
+  .btn.primary { background:var(--coral); color:#fff; }
+  .btn.ghost { background:transparent; color:var(--ink); border:1px solid var(--line); }
+  .buttons { display:flex; gap:10px; flex-wrap:wrap; }
+  .prose { font-family:'Inter'; font-size:15px; line-height:1.62; color:#3a3733; }
+
+  .job .role { font-size:19px; font-weight:600; letter-spacing:-.01em; }
+  /* company + context on ONE line */
+  .job .orgline { display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin-top:5px; }
+  .job .org { font:12px 'Space Mono',monospace; color:var(--coral-d); }
+  .job .sep { color:#c9c2b4; font-size:12px; }
+  .job .ctx { font-family:'Inter'; font-style:italic; color:#7a746a; font-size:13px; }
+  .job ul { margin:12px 0 0; padding-left:0; list-style:none; }
+  .job li { font-family:'Inter'; font-size:13.5px; line-height:1.5; color:#48453f; padding-left:18px; position:relative; margin-bottom:6px; }
+  .job li::before { content:''; position:absolute; left:0; top:6px; width:7px; height:7px; background:var(--coral); border-radius:2px; }
+  .when { font:12px 'Space Mono',monospace; color:var(--mut); white-space:nowrap; }
+
+  .foot { padding:36px 40px; border-top:1px solid var(--line); display:flex; justify-content:space-between; color:var(--mut); font-size:13px; font-family:'Inter'; }
+  .foot .mark { font-family:'Space Mono',monospace; color:var(--coral); }
+
+  .cvA .body { display:grid; grid-template-columns:330px 1fr; }
+  .cvA .side { padding:44px 34px; border-right:1px solid var(--line); }
+  .cvA .side .name { font-size:30px; font-weight:600; letter-spacing:-.02em; line-height:1.05; }
+  .cvA .side .title { color:var(--coral-d); font-weight:500; margin-top:4px; font-size:15px; }
+  .cvA .side .buttons { margin:18px 0 24px; }
+  .cvA .side .contact { font-family:'Inter'; font-size:13px; line-height:1.9; color:#3a3733; border-top:1px solid var(--line); padding-top:16px; }
+  .socials { display:flex; gap:16px; margin-top:14px; }
+  .socials a { display:flex; align-items:center; justify-content:center; color:#b3ada2; transition:.12s; }
+  .socials a:hover { color:var(--coral); }
+  .socials svg { width:19px; height:19px; fill:currentColor; }
+  .cvA .side .block { margin-top:26px; }
+  .cvA .side .block .lbl { margin-bottom:10px; display:block; }
+  .cvA .side .sk { font-family:'Inter'; font-size:13px; line-height:1.5; margin-bottom:9px; color:#3a3733; }
+  .cvA .side .sk b { font-family:'Space Grotesk'; font-weight:600; }
+  .cvA .main { padding:44px 40px; }
+  .cvA .main .prose { max-width:64ch; margin-top:12px; }
+  .cvA .job { padding:26px 0 4px; display:grid; grid-template-columns:1fr auto; gap:2px 20px; }
+  .cvA .job .when { grid-column:2; grid-row:1; text-align:right; }
+  .cvA .job .body2 { grid-column:1; }
+  /* nested engagements under a parent (e.g. Flumes) */
+  .cvA .subjobs { margin:14px 0 0 18px; padding-left:24px; border-left:2px solid #ecd8cd; }
+  .cvA .subhead { font:11px 'Space Mono',monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--coral-d); opacity:.85; }
+  .cvA .job.sub { padding:16px 0 2px; }
+  .cvA .job.sub:first-of-type { padding-top:10px; }
+  .cvA .job.sub .role { font-size:16px; }
+</style>
+
+<div class="cv">
+  <h2>CV &middot; no em-dashes, company + context on one line</h2>
+  <p class="lead">Every em-dash removed (commas / colons / hyphens instead). The italic context now sits on the same line as the coral company name, separated by a middot. Rounded coral bullets, light-gray icons, steve@steveb.io. Click to lock, or flag tweaks.</p>
+
+  <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="u">steveb.io/cv</span></div>
+  <div class="pg cvA">
+    <div class="nav"><div class="ident"><span class="mark">//</span>Steve Butterworth</div><div class="links"><a>Work</a><a class="on">CV</a><a>Writing</a><a>Contact</a></div></div>
+    <div class="body">
+      <aside class="side">
+        <div class="name">Steve Butterworth</div>
+        <div class="title">Senior Ruby on Rails Engineer</div>
+        <div class="buttons"><a class="btn primary">&#8595; PDF</a><a class="btn ghost">&#9635; Copy for AI</a></div>
+        <div class="contact">Ipswich, Suffolk
+          <div class="socials">
+            <a title="Email steve@steveb.io"><svg viewBox="0 0 24 24"><path d="M22 4H2v16h20V4zm-2 2v.5l-8 5-8-5V6h16zM4 18V8.3l8 5 8-5V18H4z"/></svg></a>
+            <a title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+            <a title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a>
+          </div>
+        </div>
+        <div class="block"><span class="lbl">Core skills</span>
+          <div class="sk"><b>Backend:</b> Rails, API design, Sidekiq, RSpec</div>
+          <div class="sk"><b>Data:</b> PostgreSQL, Elasticsearch, Redis, Kafka, ingestion, rollups</div>
+          <div class="sk"><b>Ops:</b> Dashboards, admin, reporting, alerting, monitoring</div>
+          <div class="sk"><b>AI/ML:</b> LLM classification, summarisation, cleanup, workflows</div>
+          <div class="sk"><b>Practice:</b> Testing, CI, standards, docs, stakeholder comms</div>
+        </div>
+        <div class="block"><span class="lbl">Education</span><div class="sk">1st Class BSc (Hons) Computer Science</div></div>
+      </aside>
+      <main class="main">
+        <span class="seclbl"><span class="m">//</span> Profile</span>
+        <p class="prose">Software engineer with 20 years&rsquo; experience building and maintaining Ruby on Rails systems, with a strong focus on data-heavy systems: live ingestion, search, filtering, classification, dashboards and production reliability, from high-frequency event pipelines to long-running operational tooling. Hands-on, end-to-end ownership of reliable Rails applications, working directly with customers and small technical teams.</p>
+
+        <span class="seclbl spaced"><span class="m">//</span> Experience</span>
+
+        <div class="job"><div class="body2"><div class="role">Senior Rails Engineer &amp; Product Owner</div><div class="orgline"><span class="org">Changeflow</span><span class="sep">&middot;</span><span class="ctx">Rails monitoring &amp; alerting product, independently built and operated</span></div><ul><li>Production Rails platform for scheduled monitoring, change detection, classification and alerting.</li><li>Puppeteer/Node automation integrated with Rails, PostgreSQL, Redis, Faktory/Sidekiq.</li><li>AI-assisted classification &amp; summarisation to cut noise; own deploy, reliability &amp; support.</li></ul></div><div class="when">2023 - Present</div></div>
+
+        <div class="job"><div class="body2"><div class="role">Independent Senior Rails Engineer &amp; Technical Owner</div><div class="orgline"><span class="org">Flumes</span><span class="sep">&middot;</span><span class="ctx">Independent Rails consultancy &amp; product engineering</span></div><ul><li>Full-stack, data-heavy web apps: discovery, architecture, build, deploy and long-term maintenance.</li><li>Reliable Rails / PostgreSQL / Elasticsearch systems for a range of clients.</li></ul></div><div class="when">2010 - Present</div></div>
+
+        <div class="subjobs">
+          <div class="subhead">// Select engagements</div>
+          <div class="job sub"><div class="body2"><div class="role">Senior Rails Engineer</div><div class="orgline"><span class="org">NTT Data (Contract/Seasonal)</span><span class="sep">&middot;</span><span class="ctx">Engaged via LEX &amp; Pulse Group</span></div><ul><li>Time-critical live data-ingestion &amp; visualisation for The Open, BMW International Open, Indy 500.</li><li>Kafka, XML, WebSocket feeds, HTTP streaming, GPS/timing &amp; weather into live pipelines.</li><li>PostgreSQL staging, bulk loading and rollups; Rails/D3.js/Three.js live 3D shot tracking at 1M+ daily visits.</li></ul></div><div class="when">2014 - 2023</div></div>
+
+          <div class="job sub"><div class="body2"><div class="role">Senior Rails Engineer</div><div class="orgline"><span class="org">Environmentjob.co.uk (Contract/Fractional)</span><span class="sep">&middot;</span><span class="ctx">The UK&rsquo;s leading environmental jobs platform</span></div><ul><li>Job board plus admin, advertiser &amp; job-seeker portals from scratch; full Rails 1 to Rails 8 journey.</li><li>Elasticsearch full-text &amp; faceted search; email alert system sending 150k/week.</li><li>CRM, admin workflow and AI import, clean-up &amp; classification systems.</li></ul></div><div class="when">2013 - Present</div></div>
+
+          <div class="job sub"><div class="body2"><div class="role">Senior Rails Engineer</div><div class="orgline"><span class="org">GSK MVOC Analyser</span><span class="sep">&middot;</span><span class="ctx">Engaged by AI firm Retechnica</span></div><ul><li>Medical voice-of-customer dashboard: analysis, reporting, interactive visualisation, PDF &amp; PPT export.</li><li>Delivered on time &amp; budget; 9/10 satisfaction from 50+ stakeholders.</li></ul></div><div class="when">2019</div></div>
+        </div>
+
+        <div class="job"><div class="body2"><div class="role">Lead Rails Engineer</div><div class="orgline"><span class="org">AlphaSights</span><span class="sep">&middot;</span><span class="ctx">Information-services &amp; advisory, Cambridge/London</span></div><ul><li>First employee &amp; technical lead; set direction with founders, recruited &amp; led the initial Rails team (now 2k+ staff).</li><li>Architected a bespoke CRM &amp; customer-portal underpinning the firm&rsquo;s client communications.</li></ul></div><div class="when">2008 - 2010</div></div>
+
+        <span class="seclbl spaced"><span class="m">//</span> Additional experience</span>
+
+        <div class="job"><div class="body2"><div class="role">Co-Founder</div><div class="orgline"><span class="org">Unicorn Studios Ipswich</span></div><ul><li>Not-for-profit creative co-working space for remote workers, freelancers &amp; contractors.</li></ul></div><div class="when">2019 - Present</div></div>
+
+        <div class="job"><div class="body2"><div class="role">Rails &amp; PHP Developer</div><div class="orgline"><span class="org">Humble Technologies</span></div><ul><li>PHP &amp; Ruby consultancy for UK clients, including lowcarbon.com and Chameleon Studios.</li></ul></div><div class="when">2006 - 2008</div></div>
+
+        <div class="job"><div class="body2"><div class="role">Senior Software Engineer</div><div class="orgline"><span class="org">i2, Inc. (now part of IBM)</span></div><ul><li>Led the web version of the flagship analytics tool; built a Java/JS SDK for embeddable charting.</li></ul></div><div class="when">2002 - 2005</div></div>
+
+        <div class="job"><div class="body2"><div class="role">Software Developer</div><div class="orgline"><span class="org">Crystal Decisions (now part of SAP)</span></div><ul><li>Built enterprise OLAP components and a front-end JavaScript SDK; mentored new developers.</li></ul></div><div class="when">1999 - 2001</div></div>
+      </main>
+    </div>
+    <div class="foot"><div><span class="mark">//</span> Steve Butterworth</div><div>Updated 2026 &middot; steve@steveb.io</div></div>
+  </div></div>
+
+</div>

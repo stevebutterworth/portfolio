@@ -1,0 +1,131 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  .lb { --ink:#0B0B0C; --mut:#6b6b70; --line:#e6e1d6; --c:#E0613A; --cd:#c2502e; --bg:#F9F6F0; }
+  .lb h2 { margin-bottom:2px; }
+  .lb .lead { color:#666; font-size:14px; margin-bottom:16px; }
+  .lb .pick { cursor:pointer; margin:14px 0 8px; }
+  .lb .frame { border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.12); box-shadow:0 18px 40px -22px rgba(0,0,0,.35); transition:transform .15s, box-shadow .15s; }
+  .lb .pick:hover .frame { transform:translateY(-3px); box-shadow:0 28px 60px -24px rgba(0,0,0,.5); }
+  .lb .pick.selected .frame { outline:3px solid var(--c); outline-offset:3px; }
+  .lb .chrome { height:30px; background:#e4dfd3; display:flex; align-items:center; gap:6px; padding:0 12px; }
+  .lb .chrome i { width:10px;height:10px;border-radius:50%;background:#c8c2b3; }
+  .lb .chrome .u { margin-left:14px; font:12px 'Space Mono',monospace; color:#8a8477; }
+  .lb .cap { display:flex; align-items:baseline; gap:10px; margin-top:10px; }
+  .lb .cap .k { font-weight:700; font-family:'Space Grotesk'; }
+  .lb .cap .k .ltr { display:inline-flex;padding:0 9px;height:22px;border-radius:6px;background:#111;color:#fff;align-items:center;justify-content:center;font-size:12px;margin-right:8px;vertical-align:middle; }
+  .lb .cap .d { color:#666; font-size:14px; }
+
+  .stagewrap { position:relative; height:540px; overflow:hidden; }
+  /* faint portfolio behind, to show it's an overlay */
+  .behind { position:absolute; inset:0; background:var(--bg); font-family:'Space Grotesk'; padding:22px 30px; filter:blur(2px); }
+  .behind .nav { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:14px; }
+  .behind .mark { color:var(--c); font-family:'Space Mono'; font-weight:700; }
+  .behind .row { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:24px; }
+  .behind .row .im { aspect-ratio:4/3; background:#ddd; border-radius:8px; overflow:hidden; } .behind .row .im img{width:100%;height:100%;object-fit:cover}
+
+  .arrow { position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:20px; z-index:3; }
+  .close { cursor:pointer; display:flex; align-items:center; justify-content:center; }
+
+  /* ============ A: dark immersive ============ */
+  .A .overlay { position:absolute; inset:0; background:rgba(16,14,11,.94); display:flex; flex-direction:column; z-index:2; }
+  .A .top { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; color:#efe9df; }
+  .A .top .meta { font:12px 'Space Mono',monospace; letter-spacing:.05em; }
+  .A .top .meta b { color:var(--c); }
+  .A .top .meta .ttl { color:#efe9df; margin-left:10px; }
+  .A .close { width:34px;height:34px;border-radius:50%; background:rgba(255,255,255,.08); color:#efe9df; }
+  .A .stage { flex:1; position:relative; display:flex; align-items:center; justify-content:center; padding:0 60px; }
+  .A .stage .media { max-width:100%; max-height:100%; border-radius:8px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+  .A .stage .media img { display:block; max-height:340px; width:auto; }
+  .A .arrow { background:rgba(255,255,255,.09); color:#efe9df; }
+  .A .arrow:hover { background:var(--c); }
+  .A .film { display:flex; gap:8px; justify-content:center; padding:16px; }
+  .A .film .t { width:64px; height:44px; border-radius:5px; overflow:hidden; opacity:.5; cursor:pointer; position:relative; border:2px solid transparent; }
+  .A .film .t img{width:100%;height:100%;object-fit:cover}
+  .A .film .t.on { opacity:1; border-color:var(--c); }
+  .A .film .t .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; background:rgba(0,0,0,.35); font-size:13px; }
+  .A .hint { text-align:center; color:#8a8578; font:10px 'Space Mono',monospace; letter-spacing:.1em; padding-bottom:12px; text-transform:uppercase; }
+
+  /* ============ B: light framed ============ */
+  .B .overlay { position:absolute; inset:0; background:rgba(11,11,12,.55); display:flex; align-items:center; justify-content:center; z-index:2; }
+  .B .panel { background:var(--bg); border-radius:16px; width:82%; max-height:88%; overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,.4); display:flex; flex-direction:column; }
+  .B .phead { display:flex; justify-content:space-between; align-items:center; padding:14px 20px; border-bottom:1px solid var(--line); }
+  .B .phead .meta { font:12px 'Space Mono',monospace; }
+  .B .phead .meta b { color:var(--c); } .B .phead .meta .ttl{ font-family:'Space Grotesk'; font-weight:600; margin-left:8px; }
+  .B .close { width:32px;height:32px;border-radius:8px; border:1px solid var(--line); color:var(--ink); }
+  .B .stage { position:relative; padding:22px; display:flex; align-items:center; justify-content:center; background:#efe9df; }
+  .B .stage img { max-height:300px; width:auto; max-width:100%; border-radius:8px; }
+  .B .arrow { background:#fff; border:1px solid var(--line); color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,.12); }
+  .B .arrow:hover { background:var(--c); color:#fff; }
+  .B .c?ap { }
+  .B .pcap { padding:12px 20px; font-family:'Inter'; font-size:13px; color:#48453f; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
+  .B .film { display:flex; gap:8px; padding:12px 20px 16px; overflow:auto; }
+  .B .film .t { width:60px; height:42px; border-radius:5px; overflow:hidden; cursor:pointer; border:2px solid transparent; opacity:.7; position:relative; }
+  .B .film .t img{width:100%;height:100%;object-fit:cover}
+  .B .film .t.on { border-color:var(--c); opacity:1; }
+  .B .film .t .play{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; background:rgba(0,0,0,.35); font-size:12px; }
+</style>
+
+<div class="lb">
+  <h2>Portfolio lightbox &mdash; two takes</h2>
+  <p class="lead">Opens when a project cover with extra media is clicked. Shows images + video, with a thumbnail strip, prev/next, counter, title and close. Keyboard: Esc closes, arrows navigate. A = dark immersive (images pop); B = light framed panel (on-brand ivory).</p>
+
+  <!-- ============ A ============ -->
+  <div class="pick" data-choice="lb-a" onclick="toggleSelect(this)">
+    <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="u">steveb.io</span></div>
+      <div class="stagewrap A">
+        <div class="behind"><div class="nav"><div><span class="mark">//</span> Steve Butterworth</div><div style="font-size:11px;color:#888">WORK · CV · WRITING</div></div><div class="row"><div class="im"><img src="https://picsum.photos/seed/bh1/400/300"></div><div class="im"><img src="https://picsum.photos/seed/bh2/400/300"></div></div></div>
+        <div class="overlay">
+          <div class="top"><div class="meta"><b>03 / 08</b><span class="ttl">Aurora Global Launch</span></div><div class="close">&#10005;</div></div>
+          <div class="stage">
+            <div class="arrow" style="left:14px">&#8249;</div>
+            <div class="media"><img src="https://picsum.photos/seed/lbmain/900/560"></div>
+            <div class="arrow" style="right:14px">&#8250;</div>
+          </div>
+          <div class="film">
+            <div class="t"><img src="https://picsum.photos/seed/f1/120/90"></div>
+            <div class="t"><img src="https://picsum.photos/seed/f2/120/90"></div>
+            <div class="t on"><img src="https://picsum.photos/seed/lbmain/120/90"></div>
+            <div class="t"><img src="https://picsum.photos/seed/f4/120/90"></div>
+            <div class="t"><img src="https://picsum.photos/seed/f5/120/90"><span class="play">&#9654;</span></div>
+            <div class="t"><img src="https://picsum.photos/seed/f6/120/90"></div>
+          </div>
+          <div class="hint">Esc to close &nbsp;&middot;&nbsp; &#8249; &#8250; to navigate</div>
+        </div>
+      </div>
+    </div>
+    <div class="cap"><span class="k"><span class="ltr">A</span>Dark immersive</span><span class="d">Full dark backdrop, image centered and glowing, coral-accented counter and active thumb, video thumb shows a play badge. Best for making visual work pop.</span></div>
+  </div>
+
+  <!-- ============ B ============ -->
+  <div class="pick" data-choice="lb-b" onclick="toggleSelect(this)">
+    <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="u">steveb.io</span></div>
+      <div class="stagewrap B">
+        <div class="behind"><div class="nav"><div><span class="mark">//</span> Steve Butterworth</div><div style="font-size:11px;color:#888">WORK · CV · WRITING</div></div><div class="row"><div class="im"><img src="https://picsum.photos/seed/bh1/400/300"></div><div class="im"><img src="https://picsum.photos/seed/bh2/400/300"></div></div></div>
+        <div class="overlay">
+          <div class="panel">
+            <div class="phead"><div class="meta"><b>03 / 08</b><span class="ttl">Aurora Global Launch</span></div><div class="close">&#10005;</div></div>
+            <div class="stage">
+              <div class="arrow" style="left:14px">&#8249;</div>
+              <img src="https://picsum.photos/seed/lbmain/900/540">
+              <div class="arrow" style="right:14px">&#8250;</div>
+            </div>
+            <div class="pcap"><span>Launch-night control room, live viewer counter on the wall.</span><span style="font:11px 'Space Mono',monospace;color:#8a8477">Esc to close</span></div>
+            <div class="film">
+              <div class="t"><img src="https://picsum.photos/seed/f1/120/90"></div>
+              <div class="t"><img src="https://picsum.photos/seed/f2/120/90"></div>
+              <div class="t on"><img src="https://picsum.photos/seed/lbmain/120/90"></div>
+              <div class="t"><img src="https://picsum.photos/seed/f4/120/90"></div>
+              <div class="t"><img src="https://picsum.photos/seed/f5/120/90"><span class="play">&#9654;</span></div>
+              <div class="t"><img src="https://picsum.photos/seed/f6/120/90"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cap"><span class="k"><span class="ltr">B</span>Light framed panel</span><span class="d">Ivory rounded panel on a dimmed page, with a caption line under the image. Stays fully on-brand and calmer; captions per image if you want them.</span></div>
+  </div>
+
+</div>

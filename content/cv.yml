@@ -1,0 +1,109 @@
+# Steve Butterworth CV. Rendered by the /cv page and the "Copy for AI" button.
+# No em-dashes anywhere. Date ranges use a plain hyphen.
+name: "Steve Butterworth"
+title: "Senior Ruby on Rails Engineer"
+tagline: "Rails/Ruby · PostgreSQL · Elasticsearch · Data ingestion · Kafka · 1st Class BSc (Hons) Comp Sci"
+location: "Ipswich, Suffolk"
+email: "steve@steveb.io"
+linkedin: "https://linkedin.com/in/stevebutterworth"
+github: "https://github.com/CHANGE-ME"   # TODO: your GitHub URL
+pdf: "cv.pdf"                            # TODO: drop your hand-made PDF at content/cv.pdf
+education: "1st Class BSc (Hons) Computer Science"
+
+profile: >
+  Software engineer with 20 years' experience building and maintaining Ruby on
+  Rails systems, with a strong focus on data-heavy systems: live data ingestion,
+  search, filtering, classification, dashboards and production reliability, from
+  high-frequency event pipelines to long-running operational tooling. Across
+  permanent, contract and independent roles the work has been consistent: hands-on,
+  end-to-end technical ownership of reliable, long-running Rails applications,
+  working directly with customers, stakeholders and small technical teams to turn
+  messy real-world data and workflows into reliable software.
+
+skills:
+  Backend: "Ruby on Rails, API design, Sidekiq, RSpec"
+  Data: "PostgreSQL, Elasticsearch, Redis, Kafka, ingestion, validation, rollups"
+  "Operational tools": "Dashboards, admin workflows, reporting, alerting, monitoring, customer-facing reliability"
+  "AI/ML support": "LLM classification, summarisation, data cleanup, prompt/workflow integration"
+  "Engineering practices": "Automated testing, CI, coding standards, documentation, stakeholder communication"
+
+jobs:
+  - role: "Senior Rails Engineer & Product Owner"
+    org: "Changeflow"
+    context: "Rails-based monitoring and alerting product, independently built and operated"
+    when: "2023 - Present"
+    bullets:
+      - "Built and operated a production Rails platform for scheduled website monitoring, change detection, classification and customer alerting."
+      - "Designed the core data model, monitoring pipeline, background jobs and notification workflows."
+      - "Integrated Puppeteer/Node.js browser automation with Rails, PostgreSQL, Redis and Faktory/Sidekiq."
+      - "Added AI-assisted classification, summarisation and filtering to reduce noise and improve alerts."
+      - "Own deployment, production reliability, support and customer feedback loops."
+
+  - role: "Independent Senior Rails Engineer & Technical Owner"
+    org: "Flumes"
+    context: "Independent Rails consultancy & product engineering"
+    when: "2010 - Present"
+    bullets:
+      - "Independent Rails consultancy delivering full-stack, often data-heavy web applications for clients."
+      - "Work spans discovery, architecture, build, deployment, customer liaison and long-term maintenance, focused on reliable Rails/PostgreSQL/Elasticsearch systems."
+    engagements:
+      - role: "Senior Rails Engineer"
+        org: "NTT Data (Contract/Seasonal)"
+        context: "Engaged via LEX & Pulse Group"
+        when: "2014 - 2023"
+        bullets:
+          - "Delivered time-critical live data-ingestion and visualisation systems for NTT DATA sports sponsorships including The Open, BMW International Open and Indy 500."
+          - "Integrated Kafka, XML posts, WebSocket feeds, HTTP streaming, GPS/timing data and weather polling into live event data pipelines."
+          - "Validated, reconciled and synchronised high-frequency live data feeds for real-time visualisations under fixed event deadlines."
+          - "Used PostgreSQL staging tables, bulk loading, rollups and aggregations to support performant analysis and derived display state."
+          - "Built Rails/JS/D3.js/Three.js systems powering live 3D shot tracking, public websites and large-format event displays."
+          - "From creative concepts to over 1 million daily visits in 4 months, against immovable deadlines."
+      - role: "Senior Rails Engineer"
+        org: "Environmentjob.co.uk (Contract/Fractional)"
+        context: "Part-time Senior Rails engineer for the UK's leading environmental jobs platform"
+        when: "2013 - Present"
+        bullets:
+          - "Build and maintain systems for job search, advertiser tools, admin workflow, CRM and reporting."
+          - "Job board plus comprehensive admin, advertiser and job-seeker portals from scratch."
+          - "Data modelling, Elasticsearch for full-text search, faceted filtering and an email alert system sending over 150k/week."
+          - "Built CRM, admin workflow and AI import, clean-up and classification systems."
+          - "Full maintenance and upgrade journey from Rails 1 to Rails 8."
+      - role: "Senior Rails Engineer"
+        org: "GSK MVOC Analyser"
+        context: "Engaged by AI firm Retechnica"
+        when: "2019"
+        bullets:
+          - "Built a medical voice-of-customer reporting dashboard."
+          - "Included analysis, reporting, interactive visualisation, PDF and PPT export."
+          - "Delivered on time and on budget, receiving a 9/10 satisfaction score from 50+ stakeholders."
+
+  - role: "Lead Rails Engineer"
+    org: "AlphaSights"
+    context: "Information-services & advisory firm, Cambridge/London"
+    when: "2008 - 2010"
+    bullets:
+      - "As first employee and technical lead, set the technology direction with the founders, recruited and led the initial Ruby on Rails technology team, for a company that has since grown to over 2k employees."
+      - "Architected and built a bespoke CRM and customer-portal system underpinning the firm's client communications."
+      - "Role covered technical recruitment, coding standards, best practices and mentoring, as well as gathering requirements, writing specifications, data modelling and designing the system architecture."
+
+additional:
+  - role: "Co-Founder"
+    org: "Unicorn Studios Ipswich"
+    when: "2019 - Present"
+    bullets:
+      - "Co-founded a not-for-profit creative co-working space for remote workers, freelancers and contractors."
+  - role: "Rails & PHP Developer"
+    org: "Humble Technologies"
+    when: "2006 - 2008"
+    bullets:
+      - "PHP and Ruby consultancy for UK clients, including lowcarbon.com and Chameleon Studios."
+  - role: "Senior Software Engineer"
+    org: "i2, Inc. (now part of IBM)"
+    when: "2002 - 2005"
+    bullets:
+      - "Led the web version of the flagship analytics tool; built a Java/JS SDK letting third parties embed its charting technology."
+  - role: "Software Developer"
+    org: "Crystal Decisions (now part of SAP)"
+    when: "1999 - 2001"
+    bullets:
+      - "Built enterprise OLAP components and a front-end JavaScript SDK, and mentored new developers."

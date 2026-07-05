@@ -1,0 +1,7 @@
+The Open — ShotView (NTT Data) reference
+
+Video links:
+https://www.youtube.com/watch?app=desktop&v=NeCOzhro_x8&ra=m
+https://www.youtube.com/watch?v=ebKv9aPsotI
+
+Source site: https://www.theopen.com  (ShotView / Leaderboard 3D shot-tracing)
