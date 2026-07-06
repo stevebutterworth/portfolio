@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Steve Butterworth · Software Engineer" %></title>
+    <% page_title = content_for(:title) || "Steve Butterworth · Software Engineer" %>
+    <% page_description = content_for(:description) || "Software engineer and creative technologist based in Ipswich, UK. 15 years shipping web apps, native apps and interactive installations." %>
+    <% og_type = content_for(:og_type) || "website" %>
+    <% og_image = content_for(:og_image) || (Project.all.first && request.base_url + asset_media(Project.all.first.cover)) %>
+    <title><%= page_title %></title>
+    <meta name="description" content="<%= page_description %>">
+    <meta property="og:title" content="<%= page_title %>">
+    <meta property="og:description" content="<%= page_description %>">
+    <meta property="og:type" content="<%= og_type %>">
+    <% if og_image %>
+      <meta property="og:image" content="<%= og_image %>">
+    <% end %>
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Portfolio">

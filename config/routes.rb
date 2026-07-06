@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get "contact" => "contacts#show"
 
+  get "sitemap.xml" => "pages#sitemap", defaults: { format: :xml }
+
   # Defines the root path route ("/")
   root "pages#home"
 end

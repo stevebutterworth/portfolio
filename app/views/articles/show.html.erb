@@ -1,3 +1,8 @@
+<% content_for :title, "#{@article.title} · Steve Butterworth" %>
+<% content_for :description, @article.excerpt %>
+<% content_for :og_type, "article" %>
+<% content_for :og_image, request.base_url + asset_media(@article.cover) if @article.cover.present? %>
+
 <div class="mx-auto max-w-[760px] px-5 pb-20 pt-12 md:px-6 md:pt-16">
   <%= link_to articles_path, class: "font-mono text-[11px] uppercase tracking-widest text-coral-d" do %>
     &larr; All writing

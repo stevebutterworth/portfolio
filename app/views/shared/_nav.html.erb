@@ -4,8 +4,8 @@
   </a>
   <div class="flex gap-4 font-mono text-xs uppercase tracking-widest md:gap-6">
     <a href="/" class="<%= current_page?("/") ? "text-coral" : "text-ink" %>">Work</a>
-    <a href="/cv" class="<%= current_page?("/cv") ? "text-coral" : "text-ink" %>">CV</a>
-    <a href="/writing" class="text-ink">Writing</a>
-    <a href="/contact" class="text-ink">Contact</a>
+    <a href="/cv" class="<%= request.path.start_with?("/cv") ? "text-coral" : "text-ink" %>">CV</a>
+    <a href="/writing" class="<%= request.path.start_with?("/writing") ? "text-coral" : "text-ink" %>">Writing</a>
+    <a href="/contact" class="<%= request.path.start_with?("/contact") ? "text-coral" : "text-ink" %>">Contact</a>
   </div>
 </nav>
