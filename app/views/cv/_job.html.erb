@@ -1,0 +1,20 @@
+<%# A single CV entry: role/org/context header, bullets and the date range.
+    Pass sub: true for engagements nested under the Flumes umbrella. %>
+<div class="grid grid-cols-[1fr_auto] gap-x-5 gap-y-0.5 <%= sub ? "pt-4 first:pt-2.5" : "pt-6 first:pt-0" %>">
+  <div>
+    <div class="font-display font-semibold tracking-tight <%= sub ? "text-base" : "text-[19px]" %>"><%= job["role"] %></div>
+    <div class="mt-1 flex flex-wrap items-baseline gap-2">
+      <span class="font-mono text-xs text-coral-d"><%= job["org"] %></span>
+      <% if job["context"].present? %>
+        <span class="text-xs text-muted">&middot;</span>
+        <span class="font-body text-[13px] italic text-ink2"><%= job["context"] %></span>
+      <% end %>
+    </div>
+    <ul class="cv-bullets">
+      <% Array(job["bullets"]).each do |bullet| %>
+        <li class="mb-1.5 font-body text-[13.5px] leading-relaxed text-ink2"><%= bullet %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="whitespace-nowrap text-right font-mono text-xs text-muted"><%= job["when"] %></div>
+</div>

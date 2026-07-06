@@ -1,0 +1,48 @@
+# Small fixture CV, same shape as the real content/cv.yml.
+name: "Ada Example"
+title: "Senior Example Engineer"
+tagline: "Ruby · Testing · SQLite"
+location: "Testville"
+email: "ada@example.com"
+linkedin: "https://linkedin.com/in/ada"
+github: "https://github.com/ada"
+education: "BSc Example"
+
+profile: >
+  Profile text for testing purposes, spanning a couple of lines to mimic
+  the shape of the real content.
+
+skills:
+  Backend: "Ruby, Rails"
+  Data: "SQLite, testing"
+
+jobs:
+  - role: "Engineer"
+    org: "Acme"
+    context: "Widget manufacturing"
+    when: "2020 - Present"
+    bullets:
+      - "Did a thing."
+      - "Did another thing."
+
+  - role: "Consultant"
+    org: "Flumes"
+    context: "Independent consultancy"
+    when: "2015 - 2020"
+    bullets:
+      - "Consulted broadly."
+    engagements:
+      - role: "Contractor"
+        org: "Widgets Inc"
+        context: "Engaged via Agency"
+        when: "2016 - 2018"
+        bullets:
+          - "Built widgets."
+          - "Fixed widgets."
+
+additional:
+  - role: "Volunteer"
+    org: "Community Group"
+    when: "2019 - Present"
+    bullets:
+      - "Volunteered."

@@ -1,0 +1,72 @@
+<div class="grid grid-cols-1 md:grid-cols-[330px_1fr]">
+  <aside class="border-line px-5 py-11 md:border-r md:px-8">
+    <div class="font-display text-3xl font-semibold leading-tight tracking-tight"><%= @cv.name %></div>
+    <div class="mt-1 text-[15px] font-medium text-coral-d"><%= @cv.title %></div>
+
+    <div class="mt-4 flex flex-wrap gap-2.5">
+      <%= link_to cv_pdf_path, class: "inline-flex items-center gap-2 rounded-lg bg-coral px-3.5 py-2 font-mono text-xs uppercase tracking-wide text-white" do %>
+        &#8595; PDF
+      <% end %>
+      <button type="button" data-controller="clipboard" data-action="clipboard#copy"
+              data-clipboard-text="<%= @cv.to_markdown %>"
+              class="inline-flex items-center gap-2 rounded-lg border border-line px-3.5 py-2 font-mono text-xs uppercase tracking-wide text-ink">
+        <span data-clipboard-target="label">&#9635; Copy for AI</span>
+      </button>
+    </div>
+
+    <div class="mt-6 border-t border-line pt-4 font-body text-[13px] leading-loose text-ink2">
+      <%= @cv.location %>
+      <div class="mt-3.5 flex gap-4">
+        <a href="mailto:<%= @cv.email %>" title="Email <%= @cv.email %>" class="text-[#b3ada2] transition hover:text-coral">
+          <svg viewBox="0 0 24 24" class="h-[19px] w-[19px] fill-current"><path d="M22 4H2v16h20V4zm-2 2v.5l-8 5-8-5V6h16zM4 18V8.3l8 5 8-5V18H4z"/></svg>
+        </a>
+        <a href="<%= @cv.linkedin %>" target="_blank" rel="noopener" title="LinkedIn" class="text-[#b3ada2] transition hover:text-coral">
+          <svg viewBox="0 0 24 24" class="h-[19px] w-[19px] fill-current"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="<%= @cv.github %>" target="_blank" rel="noopener" title="GitHub" class="text-[#b3ada2] transition hover:text-coral">
+          <svg viewBox="0 0 24 24" class="h-[19px] w-[19px] fill-current"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <span class="mb-2.5 block font-mono text-[11px] uppercase tracking-widest text-coral-d">Core skills</span>
+      <% @cv.skills.each do |category, values| %>
+        <div class="mb-2 font-body text-[13px] leading-snug text-ink2">
+          <span class="font-display font-semibold text-ink"><%= category %>:</span> <%= values %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="mt-6">
+      <span class="mb-2.5 block font-mono text-[11px] uppercase tracking-widest text-coral-d">Education</span>
+      <div class="font-body text-[13px] text-ink2"><%= @cv.education %></div>
+    </div>
+  </aside>
+
+  <main class="px-5 py-11 md:px-10">
+    <span class="font-mono text-xs uppercase tracking-widest text-coral-d">// Profile</span>
+    <p class="mt-3 max-w-[64ch] font-body text-[15px] leading-relaxed text-ink2"><%= @cv.profile %></p>
+
+    <span class="mt-10 block border-t border-line pt-5 font-mono text-xs uppercase tracking-widest text-coral-d">// Experience</span>
+
+    <% @cv.jobs.each do |job| %>
+      <%= render "job", job: job, sub: false %>
+
+      <% if job["engagements"].present? %>
+        <div class="ml-[18px] mt-3.5 border-l-2 border-[#ecd8cd] pl-6">
+          <div class="font-mono text-[11px] uppercase tracking-wider text-coral-d/85">// Select engagements</div>
+          <% job["engagements"].each do |engagement| %>
+            <%= render "job", job: engagement, sub: true %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <span class="mt-10 block border-t border-line pt-5 font-mono text-xs uppercase tracking-widest text-coral-d">// Additional experience</span>
+
+    <% @cv.additional.each do |job| %>
+      <%= render "job", job: job, sub: false %>
+    <% end %>
+  </main>
+</div>
