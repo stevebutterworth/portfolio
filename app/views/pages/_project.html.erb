@@ -4,7 +4,7 @@
        <%= tag.attributes(data: { controller: "lightbox" }) if project.lightbox? %>>
     <img src="<%= asset_media(project.cover) %>" alt="<%= project.title %>"
          loading="<%= index.zero? ? "eager" : "lazy" %>"
-         class="h-full min-h-[460px] w-full object-cover transition duration-300 hover:scale-105 <%= project.lightbox? ? "cursor-zoom-in" : "" %>"
+         class="h-full min-h-[300px] w-full object-cover transition duration-300 hover:scale-105 md:min-h-[460px] <%= project.lightbox? ? "cursor-zoom-in" : "" %>"
          <%= tag.attributes(data: { lightbox_target: "cover", action: "click->lightbox#open" }) if project.lightbox? %>>
     <% if project.lightbox? %>
       <span class="absolute bottom-3.5 right-3.5 rounded-full bg-black/60 px-2.5 py-1.5 font-mono text-xs text-white backdrop-blur">
@@ -15,7 +15,7 @@
       </template>
     <% end %>
   </div>
-  <div class="flex flex-col justify-center px-10 py-11">
+  <div class="flex flex-col justify-center px-5 py-8 md:px-10 md:py-11">
     <div class="text-[56px] font-bold leading-none tracking-tight text-[#f0e0d9]"><%= format("%02d", project.order) %></div>
     <h3 class="mb-3 mt-0.5 text-[29px] font-semibold tracking-tight"><%= project.title %></h3>
     <div class="prose-sm max-w-none text-[15px] leading-relaxed text-ink2"><%= project.body_html.html_safe %></div>

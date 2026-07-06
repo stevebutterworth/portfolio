@@ -16,6 +16,14 @@ RSpec.describe ContentFile do
     expect(file.body_html).to include("<strong>world</strong>")
   end
 
+  it "reflows soft-wrapped source lines instead of hard-breaking them" do
+    wrapped = Rails.root.join("spec/fixtures/content/wrapped.md")
+    File.write(wrapped, "one line\nwrapped for readability")
+    expect(described_class.new(wrapped).body_html).not_to include("<br")
+  ensure
+    File.delete(wrapped) if wrapped.exist?
+  end
+
   it "renders GitHub-flavored markdown extensions" do
     gfm = Rails.root.join("spec/fixtures/content/gfm.md")
     File.write(gfm, "~~struck~~")

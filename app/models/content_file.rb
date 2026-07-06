@@ -23,7 +23,11 @@ class ContentFile
   end
 
   def body_html
-    Rails.cache.fetch(cache_key) { Commonmarker.to_html(body_markdown) }
+    # hardbreaks off: source files wrap lines for readability; only blank lines
+    # start a new paragraph.
+    Rails.cache.fetch(cache_key) do
+      Commonmarker.to_html(body_markdown, options: { render: { hardbreaks: false } })
+    end
   end
 
   private
