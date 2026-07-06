@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get "cv.pdf" => "cv#pdf", as: :cv_pdf
   get "cv" => "cv#show"
 
+  get "writing.rss" => "articles#index", defaults: { format: :rss }, as: :articles_rss
+  get "writing" => "articles#index", as: :articles
+  get "writing/:slug" => "articles#show", as: :article
+
   # Defines the root path route ("/")
   root "pages#home"
 end
