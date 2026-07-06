@@ -49,6 +49,11 @@ YOU MUST run `bundle exec rspec` and `bin/rubocop` before considering any task c
   (POROs wrapping a relation) for complex reads, **validators** for reusable validation.
 - Use callbacks judiciously for persistence-adjacent concerns only; avoid cross-object
   side effects in callbacks.
+- **Prefer deep modules:** a narrow public interface hiding a substantial
+  implementation. Same instinct as "rich domain models" above. Do NOT split a
+  model or PORO just because it is long; split only to hide a distinct concern.
+  The Sandi Metz size rules detect smells, they do not mandate extraction. See
+  the `deep-modules` skill.
 
 ## Database (SQLite in production)
 - Add DB-level constraints (NOT NULL, unique/`add_index`, `add_foreign_key`) alongside
