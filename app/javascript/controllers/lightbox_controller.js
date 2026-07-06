@@ -14,6 +14,12 @@ export default class extends Controller {
     this.onKey = this.onKey.bind(this)
   }
 
+  disconnect() {
+    // Turbo Drive keeps the document alive across visits; make sure an open
+    // overlay never leaks its keydown listener or leaves body scroll locked.
+    this.close()
+  }
+
   open() {
     this.index = 0
     this.overlay = this.build()
@@ -37,6 +43,27 @@ export default class extends Controller {
     if (e.key === "Escape") this.close()
     if (e.key === "ArrowRight") this.go(1)
     if (e.key === "ArrowLeft") this.go(-1)
+    if (e.key === "Tab") this.trapFocus(e)
+  }
+
+  // Keep Tab and Shift+Tab cycling inside the overlay while it is open.
+  trapFocus(e) {
+    if (!this.overlay) return
+    const focusables = this.overlay.querySelectorAll("button")
+    if (focusables.length === 0) return
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    const active = document.activeElement
+    if (!this.overlay.contains(active)) {
+      e.preventDefault()
+      first.focus()
+    } else if (e.shiftKey && active === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && active === last) {
+      e.preventDefault()
+      first.focus()
+    }
   }
 
   go(delta) {
@@ -54,15 +81,23 @@ export default class extends Controller {
   paint() {
     const slide = this.slides()[this.index]
     const stage = this.overlay.querySelector(".lightbox-stage-media")
-    stage.innerHTML =
-      slide.type === "video"
-        ? `<iframe class="lightbox-video" src="${this.embed(slide.src)}" allow="autoplay; fullscreen" allowfullscreen></iframe>`
-        : `<img class="lightbox-img" src="${slide.src}" alt="">`
+    if (slide.type === "video") {
+      stage.innerHTML = this.directVideo(slide.src)
+        ? `<video class="lightbox-video" src="${slide.src}" controls autoplay></video>`
+        : `<iframe class="lightbox-video" src="${this.embed(slide.src)}" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+    } else {
+      stage.innerHTML = `<img class="lightbox-img" src="${slide.src}" alt="">`
+    }
     this.overlay.querySelector(".lightbox-counter").textContent =
       `${String(this.index + 1).padStart(2, "0")} / ${String(this.slides().length).padStart(2, "0")}`
     this.overlay.querySelectorAll(".lightbox-thumb").forEach((t, i) =>
       t.classList.toggle("is-active", i === this.index)
     )
+  }
+
+  // True for direct video files that should play in a <video> tag, not an iframe.
+  directVideo(url) {
+    return /\.(mp4|webm|mov)$/i.test(url.split(/[?#]/)[0])
   }
 
   embed(url) {
@@ -76,6 +111,9 @@ export default class extends Controller {
   build() {
     const el = document.createElement("div")
     el.className = "lightbox-overlay"
+    el.setAttribute("role", "dialog")
+    el.setAttribute("aria-modal", "true")
+    el.setAttribute("aria-label", this.title)
     el.innerHTML = `
       <div class="lightbox-top">
         <div class="lightbox-meta"><span class="lightbox-counter"></span> <span>${this.title}</span></div>
@@ -101,7 +139,8 @@ export default class extends Controller {
     el.querySelectorAll(".lightbox-thumb").forEach((t) =>
       t.addEventListener("click", () => { this.index = Number(t.dataset.i); this.paint() })
     )
-    setTimeout(() => this.paint(), 0)
+    this.overlay = el
+    this.paint()
     return el
   }
 }
