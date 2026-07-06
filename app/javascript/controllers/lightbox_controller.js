@@ -83,10 +83,10 @@ export default class extends Controller {
     const stage = this.overlay.querySelector(".lightbox-stage-media")
     if (slide.type === "video") {
       stage.innerHTML = this.directVideo(slide.src)
-        ? `<video class="lightbox-video" src="${slide.src}" controls autoplay></video>`
-        : `<iframe class="lightbox-video" src="${this.embed(slide.src)}" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+        ? `<video class="lightbox-video" src="${this.esc(slide.src)}" controls></video>`
+        : `<iframe class="lightbox-video" src="${this.esc(this.embed(slide.src))}" allow="autoplay; fullscreen" allowfullscreen></iframe>`
     } else {
-      stage.innerHTML = `<img class="lightbox-img" src="${slide.src}" alt="">`
+      stage.innerHTML = `<img class="lightbox-img" src="${this.esc(slide.src)}" alt="">`
     }
     this.overlay.querySelector(".lightbox-counter").textContent =
       `${String(this.index + 1).padStart(2, "0")} / ${String(this.slides().length).padStart(2, "0")}`
@@ -98,6 +98,13 @@ export default class extends Controller {
   // True for direct video files that should play in a <video> tag, not an iframe.
   directVideo(url) {
     return /\.(mp4|webm|mov)$/i.test(url.split(/[?#]/)[0])
+  }
+
+  // Content is repo-controlled, but never trust interpolation into innerHTML.
+  esc(value) {
+    return String(value).replace(/[&<>"']/g, (c) => (
+      { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+    ))
   }
 
   embed(url) {
@@ -116,7 +123,7 @@ export default class extends Controller {
     el.setAttribute("aria-label", this.title)
     el.innerHTML = `
       <div class="lightbox-top">
-        <div class="lightbox-meta"><span class="lightbox-counter"></span> <span>${this.title}</span></div>
+        <div class="lightbox-meta"><span class="lightbox-counter"></span> <span>${this.esc(this.title)}</span></div>
         <button class="lightbox-close" aria-label="Close">&#10005;</button>
       </div>
       <div class="lightbox-stage">
@@ -129,7 +136,7 @@ export default class extends Controller {
           (s, i) =>
             `<button class="lightbox-thumb" data-i="${i}">${
               s.type === "video" ? "<span class='lightbox-play'>&#9654;</span>" : ""
-            }<img src="${s.type === "image" ? s.src : this.images[0]}" alt=""></button>`
+            }<img src="${this.esc(s.type === "image" ? s.src : this.images[0])}" alt=""></button>`
         )
         .join("")}</div>`
     el.querySelector(".lightbox-close").addEventListener("click", () => this.close())

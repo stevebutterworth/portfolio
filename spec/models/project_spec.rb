@@ -8,7 +8,12 @@ RSpec.describe Project do
 
   describe ".all" do
     it "loads projects, ignores underscore files, orders by order then year desc" do
-      expect(described_class.all.map(&:slug)).to eq(%w[alpha beta])
+      expect(described_class.all.map(&:slug)).to eq(%w[alpha gamma beta])
+    end
+
+    it "breaks order ties by year, newest first" do
+      tied = described_class.all.select { |p| p.order == 2 }
+      expect(tied.map(&:slug)).to eq(%w[gamma beta])
     end
   end
 
@@ -35,6 +40,16 @@ RSpec.describe Project do
     it "is lightbox-eligible when it has gallery or video" do
       expect(project.lightbox?).to be(true)
       expect(described_class.find("beta").lightbox?).to be(false)
+    end
+
+    it "accepts a legacy singular video key as a one-element list" do
+      expect(described_class.find("gamma").videos).to eq([ "https://example.com/clip.mp4" ])
+    end
+
+    it "rejects blank video values so they never trigger the lightbox" do
+      beta = described_class.find("beta")
+      expect(beta.videos).to eq([])
+      expect(beta.lightbox?).to be(false)
     end
 
     it "builds a delivered-for credit line, never client language" do

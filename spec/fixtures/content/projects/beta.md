@@ -5,5 +5,6 @@ year: 2024
 order: 2
 tech: [Rails]
 cover: "projects/beta/cover.png"
+video: ""
 ---
 Body for Beta.
