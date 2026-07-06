@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "writing" => "articles#index", as: :articles
   get "writing/:slug" => "articles#show", as: :article
 
+  get "contact" => "contacts#show"
+
   # Defines the root path route ("/")
   root "pages#home"
 end
