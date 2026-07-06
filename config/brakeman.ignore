@@ -1,0 +1,17 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "2f613e073532428f21c8a07e480cd27bd15e45f336076100222030e1f8ad859d",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/articles/show.html.erb",
+      "line": 27,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "note": "Reviewed false positive: body_html is Commonmarker output over repo-controlled markdown files (content/posts). Commonmarker escapes raw HTML by default and content is not user input. Same pattern as the Work page project bodies."
+    }
+  ],
+  "updated": "2026-07-06",
+  "brakeman_version": "7.1.0"
+}
