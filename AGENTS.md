@@ -15,6 +15,20 @@ including production. RSpec for tests. Deployed with Kamal 2. See @README.md for
 
 YOU MUST run `bundle exec rspec` and `bin/rubocop` before considering any task complete.
 
+## Planning (superpowers)
+- When writing a superpowers implementation plan for a feature that touches more
+  than one layer, Task 1 MUST be a vertical **tracer bullet**, not a horizontal
+  slice: the thinnest path that runs end to end through every layer the feature
+  touches (route to controller to model to view, or job to model to storage),
+  as real wired code, TDD'd and committed. Stub the interior; the path must run.
+- Add an **architecture gate** right after the tracer: before any horizontal
+  task, confirm the shape holds end to end. If it does not, fix the plan now,
+  while nothing is built on top of it.
+- Then fan out into normal horizontal tasks via `superpowers:writing-plans` and
+  `superpowers:subagent-driven-development`.
+- Full mechanics live in the `tracer-bullet-planning` skill. Skip all of this
+  for single-layer or trivial changes; go straight to TDD.
+
 ## Architecture
 - `app/models/` — ActiveRecord models AND plain POROs. Domain logic lives here.
 - `app/models/concerns/` — mixins to organize behavior within/across models.
