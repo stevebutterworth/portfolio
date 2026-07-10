@@ -21,6 +21,7 @@ class Cv
   def github = data["github"]
   def education = data["education"]
   def profile = data["profile"]
+  def profile_paragraphs = profile.to_s.split("\n").map(&:strip).reject(&:empty?)
   def skills = data["skills"] || {}
   def jobs = data["jobs"] || []
   def additional = data["additional"] || []
@@ -28,7 +29,7 @@ class Cv
   def to_markdown
     [
       header_markdown,
-      section("Profile", profile),
+      section("Profile", profile_paragraphs.join("\n\n")),
       section("Core skills", skills_markdown),
       experience_markdown,
       additional_markdown

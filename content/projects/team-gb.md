@@ -1,17 +1,17 @@
 ---
 title: "Team GB"
-role: "Senior Rails engineer"
+role: "Senior Rails Engineer"
 year: 2016
+brand: "Team GB"
+delivered_via: "Pulse Group"
 period: "2016"
 order: 7
-tech: [Placeholder, Placeholder, Placeholder]
+tech: [Rails, Javascript, D3.js]
 cover: "projects/team-gb/cover.jpeg"
 gallery:
   - "projects/team-gb/1.jpeg"
   - "projects/team-gb/2.jpeg"
-quote: "Placeholder testimonial to be replaced with a real quote."
-quote_author: "Placeholder Name, Role"
 ---
-Placeholder project writeup. Two or three short paragraphs of copy will go here
-after the build, so the real layout and spacing can be judged first. Lorem ipsum
-dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+Team GB and it's sponsored commissioned a live data wall with social media,
+news and medal tables for the Team GB house during the Olympic Games that
+provided an engaging focal point during the event.

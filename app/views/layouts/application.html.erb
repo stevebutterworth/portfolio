@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% page_title = content_for(:title) || "Steve Butterworth · Software Engineer" %>
-    <% page_description = content_for(:description) || "Software engineer and creative technologist based in Ipswich, UK. 15 years shipping web apps, native apps and interactive installations." %>
+    <% page_title = content_for(:title) || "Steve Butterworth · Senior Product Engineer" %>
+    <% page_description = content_for(:description) || "Senior product engineer and Ruby on Rails specialist with over 20 years building, shipping and operating reliable web applications." %>
     <% og_type = content_for(:og_type) || "website" %>
     <% og_image = content_for(:og_image) || (Project.all.first && request.base_url + asset_media(Project.all.first.cover)) %>
     <title><%= page_title %></title>
@@ -25,14 +25,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="icon" href="/icon.svg?v=slashes" type="image/svg+xml">
+    <link rel="icon" href="/icon.png?v=slashes" type="image/png" sizes="512x512">
+    <link rel="apple-touch-icon" href="/icon.png?v=slashes">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
@@ -41,7 +41,7 @@
 
   <body>
     <%= render "shared/nav" %>
-    <main><%= yield %></main>
+    <main class="mx-auto w-full max-w-7xl"><%= yield %></main>
     <%= render "shared/footer" %>
   </body>
 </html>

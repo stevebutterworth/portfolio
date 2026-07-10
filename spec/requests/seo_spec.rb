@@ -5,10 +5,11 @@ RSpec.describe "SEO", type: :request do
     it "sets the home page title, description and og tags with the first project's cover" do
       get "/"
 
-      expect(response.body).to include("<title>Steve Butterworth · Software Engineer</title>")
-      expect(response.body).to include('<meta name="description" content=')
-      expect(response.body).to include('<meta property="og:title" content="Steve Butterworth · Software Engineer">')
-      expect(response.body).to include('<meta property="og:description" content=')
+      description = "Senior product engineer and Ruby on Rails specialist with over 20 years building, shipping and operating reliable web applications."
+      expect(response.body).to include("<title>Steve Butterworth · Senior Product Engineer</title>")
+      expect(response.body).to include(%(<meta name="description" content="#{description}">))
+      expect(response.body).to include('<meta property="og:title" content="Steve Butterworth · Senior Product Engineer">')
+      expect(response.body).to include(%(<meta property="og:description" content="#{description}">))
       expect(response.body).to include('<meta property="og:type" content="website">')
       expect(response.body).to include('<meta name="twitter:card" content="summary_large_image">')
 
@@ -51,29 +52,29 @@ RSpec.describe "SEO", type: :request do
   describe "nav active states" do
     it "marks Work active on / only" do
       get "/"
-      expect(response.body).to match(%r{<a href="/" class="[^"]*text-coral[^"]*">Work</a>})
+      expect(response.body).to match(%r{<a href="/" class="[^"]*text-accent[^"]*">Work</a>})
 
       get "/cv"
-      expect(response.body).not_to match(%r{<a href="/" class="[^"]*text-coral[^"]*">Work</a>})
+      expect(response.body).not_to match(%r{<a href="/" class="[^"]*text-accent[^"]*">Work</a>})
     end
 
     it "marks CV active on /cv" do
       get "/cv"
-      expect(response.body).to match(%r{<a href="/cv" class="[^"]*text-coral[^"]*">CV</a>})
+      expect(response.body).to match(%r{<a href="/cv" class="[^"]*text-accent[^"]*">CV</a>})
     end
 
     it "marks Writing active on /writing and stays active on an article page" do
       get "/writing"
-      expect(response.body).to match(%r{<a href="/writing" class="[^"]*text-coral[^"]*">Writing</a>})
+      expect(response.body).to match(%r{<a href="/writing" class="[^"]*text-accent[^"]*">Writing</a>})
 
       article = Article.all.first
       get "/writing/#{article.slug}"
-      expect(response.body).to match(%r{<a href="/writing" class="[^"]*text-coral[^"]*">Writing</a>})
+      expect(response.body).to match(%r{<a href="/writing" class="[^"]*text-accent[^"]*">Writing</a>})
     end
 
     it "marks Contact active on /contact" do
       get "/contact"
-      expect(response.body).to match(%r{<a href="/contact" class="[^"]*text-coral[^"]*">Contact</a>})
+      expect(response.body).to match(%r{<a href="/contact" class="[^"]*text-accent[^"]*">Contact</a>})
     end
   end
 

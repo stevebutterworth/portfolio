@@ -4,7 +4,7 @@
   <div>
     <div class="font-display font-semibold tracking-tight <%= sub ? "text-base" : "text-[19px]" %>"><%= job["role"] %></div>
     <div class="mt-1 flex flex-wrap items-baseline gap-2">
-      <span class="font-mono text-xs text-coral-d"><%= job["org"] %></span>
+      <span class="text-xs font-semibold uppercase tracking-wide text-accent-d"><%= job["org"] %></span>
       <% if job["context"].present? %>
         <span class="text-xs text-muted">&middot;</span>
         <span class="font-body text-[13px] italic text-ink2"><%= job["context"] %></span>
@@ -16,5 +16,5 @@
       <% end %>
     </ul>
   </div>
-  <div class="whitespace-nowrap text-right font-mono text-xs text-muted"><%= job["when"] %></div>
+  <div class="whitespace-nowrap text-right text-xs font-medium tabular-nums text-muted"><%= job["when"] %></div>
 </div>

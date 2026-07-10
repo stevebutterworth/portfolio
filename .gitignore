@@ -39,3 +39,12 @@
 
 # Brainstorming visual companion
 .superpowers/
+
+# Local bundled gems
+/vendor/bundle
+
+# Codex agent config (local)
+/.codex/
+
+# macOS
+.DS_Store

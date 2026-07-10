@@ -45,6 +45,9 @@ gem "image_processing", "~> 1.2"
 # Render Markdown content to HTML [https://github.com/gjtorikian/commonmarker]
 gem "commonmarker", "~> 2.0"
 
+# Match Ruby 4.0.5's bundled RDoc to avoid loading duplicate RDoc plugins.
+gem "rdoc", "7.0.4", require: false
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -67,4 +70,5 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "hotwire-spark", "~> 0.1.13"
 end

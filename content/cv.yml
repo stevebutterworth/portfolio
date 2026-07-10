@@ -1,7 +1,7 @@
 # Steve Butterworth CV. Rendered by the /cv page and the "Copy for AI" button.
 # No em-dashes anywhere. Date ranges use a plain hyphen.
 name: "Steve Butterworth"
-title: "Senior Ruby on Rails Engineer"
+title: "Senior Product Engineer · Ruby on Rails"
 tagline: "Rails/Ruby · PostgreSQL · Elasticsearch · Data ingestion · Kafka · 1st Class BSc (Hons) Comp Sci"
 location: "Ipswich, Suffolk"
 email: "steve@steveb.io"
@@ -11,14 +11,15 @@ pdf: "cv.pdf"                            # TODO: drop your hand-made PDF at cont
 education: "1st Class BSc (Hons) Computer Science"
 
 profile: >
-  Software engineer with 20 years' experience building and maintaining Ruby on
-  Rails systems, with a strong focus on data-heavy systems: live data ingestion,
-  search, filtering, classification, dashboards and production reliability, from
-  high-frequency event pipelines to long-running operational tooling. Across
-  permanent, contract and independent roles the work has been consistent: hands-on,
-  end-to-end technical ownership of reliable, long-running Rails applications,
-  working directly with customers, stakeholders and small technical teams to turn
-  messy real-world data and workflows into reliable software.
+  Product engineer with 20+ years building, shipping and owning software end to
+  end, from customer conversation to production and long-term operation. Founder of
+  Changeflow (AI-powered monitoring SaaS, trusted by Am Law 200 firms) and retained
+  engineer behind EnvironmentJob for 13 years; previously delivered live data
+  systems for The Open Championship and Indy 500 at over a million visits a day.
+
+  Deep Rails, with extensive LLM pipeline work: classification, summarisation,
+  cleaning and a tool-calling chatbot. Comfortable owning everything from
+  architecture to customer support.
 
 skills:
   Backend: "Ruby on Rails, API design, Sidekiq, RSpec"
@@ -28,54 +29,57 @@ skills:
   "Engineering practices": "Automated testing, CI, coding standards, documentation, stakeholder communication"
 
 jobs:
-  - role: "Senior Rails Engineer & Product Owner"
+  - role: "Founder & Product Engineer"
     org: "Changeflow"
-    context: "Rails-based monitoring and alerting product, independently built and operated"
+    context: "Bootstrapped AI-powered website monitoring and alerting SaaS, built and operated end to end"
     when: "2023 - Present"
     bullets:
-      - "Built and operated a production Rails platform for scheduled website monitoring, change detection, classification and customer alerting."
-      - "Designed the core data model, monitoring pipeline, background jobs and notification workflows."
+      - "Founded, built and operate a production Rails SaaS for website monitoring, change detection and customer alerting, trusted by Am Law 200 firms to catch business-critical changes."
+      - "Designed the core data model, monitoring pipeline, background jobs and notification workflows end to end."
       - "Integrated Puppeteer/Node.js browser automation with Rails, PostgreSQL, Redis and Faktory/Sidekiq."
-      - "Added AI-assisted classification, summarisation and filtering to reduce noise and improve alerts."
-      - "Own deployment, production reliability, support and customer feedback loops."
+      - "Built LLM pipelines for classification, summarisation and cleaning, plus an in-app tool-calling chatbot for search, cutting alert noise for customers."
+      - "Own deployment, production reliability, support and the customer feedback loop."
 
-  - role: "Independent Senior Rails Engineer & Technical Owner"
-    org: "Flumes"
-    context: "Independent Rails consultancy & product engineering"
-    when: "2010 - Present"
+  - role: "Senior Rails Engineer"
+    org: "Environmentjob.co.uk (Retained)"
+    context: "Retained engineer for the UK's leading environmental jobs platform"
+    when: "2013 - Present"
     bullets:
-      - "Independent Rails consultancy delivering full-stack, often data-heavy web applications for clients."
-      - "Work spans discovery, architecture, build, deployment, customer liaison and long-term maintenance, focused on reliable Rails/PostgreSQL/Elasticsearch systems."
-    engagements:
-      - role: "Senior Rails Engineer"
-        org: "NTT Data (Contract/Seasonal)"
-        context: "Engaged via LEX & Pulse Group"
-        when: "2014 - 2023"
-        bullets:
-          - "Delivered time-critical live data-ingestion and visualisation systems for NTT DATA sports sponsorships including The Open, BMW International Open and Indy 500."
-          - "Integrated Kafka, XML posts, WebSocket feeds, HTTP streaming, GPS/timing data and weather polling into live event data pipelines."
-          - "Validated, reconciled and synchronised high-frequency live data feeds for real-time visualisations under fixed event deadlines."
-          - "Used PostgreSQL staging tables, bulk loading, rollups and aggregations to support performant analysis and derived display state."
-          - "Built Rails/JS/D3.js/Three.js systems powering live 3D shot tracking, public websites and large-format event displays."
-          - "From creative concepts to over 1 million daily visits in 4 months, against immovable deadlines."
-      - role: "Senior Rails Engineer"
-        org: "Environmentjob.co.uk (Contract/Fractional)"
-        context: "Part-time Senior Rails engineer for the UK's leading environmental jobs platform"
-        when: "2013 - Present"
-        bullets:
-          - "Build and maintain systems for job search, advertiser tools, admin workflow, CRM and reporting."
-          - "Job board plus comprehensive admin, advertiser and job-seeker portals from scratch."
-          - "Data modelling, Elasticsearch for full-text search, faceted filtering and an email alert system sending over 150k/week."
-          - "Built CRM, admin workflow and AI import, clean-up and classification systems."
-          - "Full maintenance and upgrade journey from Rails 1 to Rails 8."
-      - role: "Senior Rails Engineer"
-        org: "GSK MVOC Analyser"
-        context: "Engaged by AI firm Retechnica"
-        when: "2019"
-        bullets:
-          - "Built a medical voice-of-customer reporting dashboard."
-          - "Included analysis, reporting, interactive visualisation, PDF and PPT export."
-          - "Delivered on time and on budget, receiving a 9/10 satisfaction score from 50+ stakeholders."
+      - "Build and maintain systems for job search, advertiser tools, admin workflow, CRM and reporting."
+      - "Job board plus comprehensive admin, advertiser and job-seeker portals from scratch."
+      - "Data modelling, Elasticsearch for full-text search, faceted filtering and an email alert system sending over 150k/week."
+      - "Built CRM, admin workflow and AI import, clean-up and classification systems."
+      - "Full maintenance and upgrade journey from Rails 1 to Rails 8."
+
+  - role: "Senior Rails Engineer"
+    org: "NTT Data (Project contracts)"
+    context: "Engaged via LEX & Pulse Group"
+    when: "2014 - 2023"
+    bullets:
+      - "Delivered time-critical live data-ingestion and visualisation systems for NTT DATA sports sponsorships including The Open, BMW International Open and Indy 500."
+      - "Integrated Kafka, XML posts, WebSocket feeds, HTTP streaming, GPS/timing data and weather polling into live event data pipelines."
+      - "Validated, reconciled and synchronised high-frequency live data feeds for real-time visualisations under fixed event deadlines."
+      - "Used PostgreSQL staging tables, bulk loading, rollups and aggregations to support performant analysis and derived display state."
+      - "Built Rails/JS/D3.js/Three.js systems powering live 3D shot tracking, public websites and large-format event displays."
+      - "From creative concepts to over 1 million daily visits in 4 months, against immovable deadlines."
+
+  - role: "Senior Rails Engineer"
+    org: "GSK MVOC Analyser (Project)"
+    context: "Engaged by AI firm Retechnica"
+    when: "2019"
+    bullets:
+      - "Built a medical voice-of-customer reporting dashboard."
+      - "Included analysis, reporting, interactive visualisation, PDF and PPT export."
+      - "Delivered on time and on budget, receiving a 9/10 satisfaction score from 50+ stakeholders."
+
+  - role: "Founder & Lead Engineer"
+    org: "Flumes"
+    context: "Social media analytics and visualisation platform, founded and built 0 to 1"
+    when: "2010 - 2013"
+    bullets:
+      - "Founded and built a social media analytics and visualisation platform from scratch: live social data ingestion, enrichment and interactive visualisation."
+      - "Enriched social data with sentiment, gender, age and geolocation classification by integrating third-party APIs."
+      - "The platform became the technology foundation for later live-event and data-visualisation work, delivered for Cambridge University Press, Team GB and NTT Data."
 
   - role: "Lead Rails Engineer"
     org: "AlphaSights"

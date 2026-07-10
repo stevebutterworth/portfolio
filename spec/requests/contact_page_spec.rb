@@ -6,7 +6,7 @@ RSpec.describe "Contact page", type: :request do
     expect(response).to have_http_status(:ok)
 
     expect(response.body).to include("Let&rsquo;s build something.")
-    expect(response.body).to include("AVAILABLE FOR WORK")
+    expect(response.body).to include("Available for work")
     expect(response.body).to include("steve@steveb.io")
     expect(response.body).to include("Ipswich, Suffolk")
     expect(response.body).to include("https://www.linkedin.com/in/stevebutterworth/")

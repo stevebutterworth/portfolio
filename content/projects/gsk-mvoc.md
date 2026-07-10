@@ -1,18 +1,17 @@
 ---
 title: "GSK mVoC"
-role: "Senior Rails engineer"
+role: "Senior Rails Engineer"
 brand: "GSK"
 delivered_via: "Retechnica"
 year: 2019
 period: "2019"
 order: 4
-tech: [Placeholder, Placeholder, Placeholder]
+tech: [Rails, Javascript, D3.js]
 cover: "projects/gsk-mvoc/cover.png"
 gallery:
   - "projects/gsk-mvoc/1.png"
-quote: "Placeholder testimonial to be replaced with a real quote."
-quote_author: "Placeholder Name, Role"
+quote: "I was amazed by the quality of the end result, delivered within tight deadlines. Steve was flexible, proactive and collaborative throughout."
+quote_author: "Marco Iannone, Director, Retechnica"
 ---
-Placeholder project writeup. Two or three short paragraphs of copy will go here
-after the build, so the real layout and spacing can be judged first. Lorem ipsum
-dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+Retechnica, a machine learning company hired us to build a sophisticated dashboard and reporting tool. Packed with analysis, data visualisation and
+the abiliy to build Powerpoint and PDF exports.

@@ -1,19 +1,19 @@
 ---
-title: "Emirates"
-role: "Senior Rails engineer"
-brand: "Emirates"
+title: "Emirates Airlines"
+role: "Senior Rails Engineer"
+brand: "Emirates Airlines"
 delivered_via: "Pulse Group"
 year: 2015
-period: "2015"
+period: "2013-2016"
 order: 3
-tech: [Placeholder, Placeholder, Placeholder]
+tech: [Rails, Cordova, JavaScript]
 cover: "projects/emirates/cover.png"
 gallery:
   - "projects/emirates/1.png"
   - "projects/emirates/2.png"
-quote: "Placeholder testimonial to be replaced with a real quote."
-quote_author: "Placeholder Name, Role"
+quote: "I have worked with Steve on several projects including work for NTT, Emirates and Team GB. He is pragmatic, creative and friendly and gets the job done to a great standard and on time."
+quote_author: "Olly Vale, Digital Producer, Pulse Group"
 ---
-Placeholder project writeup. Two or three short paragraphs of copy will go here
-after the build, so the real layout and spacing can be judged first. Lorem ipsum
-dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+Lead build on several projects including reporting tools,
+a mobile app used for signing up delegates at conferences and live interactive
+data activations, as pictured.
