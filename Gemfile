@@ -46,7 +46,7 @@ gem "image_processing", "~> 1.2"
 gem "commonmarker", "~> 2.0"
 
 # Match Ruby 4.0.5's bundled RDoc to avoid loading duplicate RDoc plugins.
-gem "rdoc", "7.0.4", require: false
+gem "rdoc", "8.0.0", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
