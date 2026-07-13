@@ -1,4 +1,4 @@
-# Content guide, steveb.io
+# Content guide, stevebutterworth.co.uk
 
 Everything on the site is a file in this repo. To publish or edit, change a file
 and deploy. No admin, no database. This guide is your checklist for gathering the
@@ -94,7 +94,7 @@ Add descriptive `alt` text where the schema asks (accessibility + SEO).
 - [ ] **Web3Forms access key** for the contact form (free, no account needed:
       web3forms.com, you get a key by email).
 - [ ] **GitHub URL** (for the CV and footer icons).
-- [ ] Confirm the public **email** is `steve@steveb.io` everywhere.
+- [ ] Confirm the public **email** is `hello@stevebutterworth.co.uk` everywhere.
 
 ---
 

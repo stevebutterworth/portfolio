@@ -469,7 +469,7 @@ RSpec.describe "Shared partials", type: :view do
 
   it "footer renders the email" do
     render partial: "shared/footer"
-    expect(rendered).to include("steve@steveb.io")
+    expect(rendered).to include("hello@stevebutterworth.co.uk")
   end
 end
 ```
@@ -529,7 +529,7 @@ Create `app/views/shared/_footer.html.erb`:
     <span class="font-mono text-coral">//</span> Let&rsquo;s build something.
   </div>
   <div class="text-right leading-loose">
-    <a href="mailto:steve@steveb.io" class="text-ink">steve@steveb.io</a><br>
+    <a href="mailto:hello@stevebutterworth.co.uk" class="text-ink">hello@stevebutterworth.co.uk</a><br>
     <a href="#" class="text-ink">LinkedIn</a> &middot; <a href="#" class="text-ink">GitHub</a><br>
     <span class="text-muted">&copy; 2026 Steve Butterworth</span>
   </div>

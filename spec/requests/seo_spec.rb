@@ -101,7 +101,7 @@ RSpec.describe "SEO", type: :request do
       expect(response).to have_http_status(:ok)
       expect(response.body).to include("User-agent: *")
       expect(response.body).to include("Allow: /")
-      expect(response.body).to include("Sitemap: https://steveb.io/sitemap.xml")
+      expect(response.body).to include("Sitemap: https://stevebutterworth.co.uk/sitemap.xml")
     end
   end
 end

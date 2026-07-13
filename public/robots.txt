@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://steveb.io/sitemap.xml
+Sitemap: https://stevebutterworth.co.uk/sitemap.xml

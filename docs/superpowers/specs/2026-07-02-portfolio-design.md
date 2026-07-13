@@ -1,4 +1,4 @@
-# steveb.io Personal Site, Design Spec
+# stevebutterworth.co.uk Personal Site, Design Spec
 
 Date: 2026-07-02
 Status: Approved design, ready for implementation planning
@@ -6,7 +6,7 @@ Author: Steve Butterworth (with Claude)
 
 ## 1. Overview
 
-A personal website for Steve Butterworth at **steveb.io**: a senior Ruby on Rails
+A personal website for Steve Butterworth at **stevebutterworth.co.uk**: a senior Ruby on Rails
 engineer and creative technologist. The site sells engineering skill first, wrapped
 in a polished, editorial visual design. Four areas (five page templates, since the
 blog has both an index and a post view):
@@ -198,7 +198,7 @@ Structured so the sidebar layout renders precisely:
 name: "Steve Butterworth"
 title: "Senior Ruby on Rails Engineer"
 location: "Ipswich, Suffolk"
-email: "steve@steveb.io"
+email: "hello@stevebutterworth.co.uk"
 linkedin: "https://linkedin.com/in/stevebutterworth"
 github: "https://github.com/..."
 education: "1st Class BSc (Hons) Computer Science"

@@ -82,7 +82,7 @@
 
 **Interfaces:**
 - Split layout per `docs/design-mockups/contact.html` variant A: left = `// Contact` eyebrow, "Let's build something." h1, pitch paragraph, availability chip, email + location rows, LinkedIn/GitHub icons; right = the form.
-- Form posts to `https://api.web3forms.com/submit` (POST, standard HTML form, no Rails action): hidden `access_key` input reading `Rails.application.credentials.dig(:web3forms, :access_key) || ENV["WEB3FORMS_ACCESS_KEY"] || "REPLACE-ME"`; fields name (text, required), email (email, required), message (textarea, required); hidden honeypot `<input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">`; hidden `subject` ("New message from steveb.io") and `from_name` ("steveb.io contact form") inputs; submit button coral. Inputs styled: bg white-ish (#FBF9F3 like), border line, rounded, coral focus ring.
+- Form posts to `https://api.web3forms.com/submit` (POST, standard HTML form, no Rails action): hidden `access_key` input reading `Rails.application.credentials.dig(:web3forms, :access_key) || ENV["WEB3FORMS_ACCESS_KEY"] || "REPLACE-ME"`; fields name (text, required), email (email, required), message (textarea, required); hidden honeypot `<input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">`; hidden `subject` ("New message from stevebutterworth.co.uk") and `from_name` ("stevebutterworth.co.uk contact form") inputs; submit button coral. Inputs styled: bg white-ish (#FBF9F3 like), border line, rounded, coral focus ring.
 - No mailer, no POST route in Rails.
 - Request spec: renders form action to web3forms, name/email/message fields, honeypot, availability chip text.
 

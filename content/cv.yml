@@ -4,7 +4,7 @@ name: "Steve Butterworth"
 title: "Senior Rails Engineer"
 tagline: "Rails/Ruby · Full-stack · PostgreSQL · Elasticsearch · Stimulus · 1st Class BSc (Hons) Comp Sci"
 location: "Ipswich, Suffolk"
-email: "steve@steveb.io"
+email: "hello@stevebutterworth.co.uk"
 linkedin: "https://linkedin.com/in/stevebutterworth"
 github: "https://github.com/stevebutterworth"
 pdf: "cv.pdf"
@@ -32,14 +32,14 @@ skills:
 jobs:
   - role: "Founder & Rails Engineer"
     org: "Changeflow"
-    context: "Bootstrapped AI-powered website monitoring and alerting SaaS, built and operated end to end"
+    context: "Bootstrapped AI-powered website monitoring and alerting SaaS (now in maintenance mode)"
     when: "2023 - Present"
     bullets:
       - "Founded, built and operate a production Rails SaaS for website monitoring, change detection and customer alerting, trusted by Am Law 200 firms to catch business-critical changes."
       - "Designed the core data model, monitoring pipeline, background jobs and notification workflows end to end."
       - "Integrated Puppeteer/Node.js browser automation with Rails, PostgreSQL, Redis and Faktory/Sidekiq."
-      - "Built LLM pipelines for classification, summarisation and cleaning, plus an in-app tool-calling chatbot for search, cutting alert noise for customers."
-      - "Own deployment, production reliability, support and the customer feedback loop."
+      - "Built LLM pipelines for classification, summarisation and cleaning, plus an in-app AI agent."
+      - "I own deployment, production reliability, support and the customer feedback loop."
 
   - role: "Senior Rails Engineer"
     org: "Environmentjob.co.uk (Contract)"
@@ -78,16 +78,16 @@ jobs:
     bullets:
       - "Founded and built a social media analytics and visualisation platform from scratch: live social data ingestion, enrichment and interactive visualisation."
       - "Enriched social data with sentiment, gender, age and geolocation classification by integrating third-party APIs."
-      - "The platform became the technology foundation for later live-event and data-visualisation work, delivered for Cambridge University Press, Team GB and NTT Data."
+      - "The platform became the technology foundation for later live-event and data-visualisation work, delivered for the likes of Cambridge University Press, Team GB and NTT Data."
 
   - role: "Lead Rails Engineer"
     org: "AlphaSights"
     context: "Information-services & advisory firm, Cambridge/London"
     when: "2008 - 2010"
     bullets:
-      - "As first employee and technical lead, set the technology direction with the founders, recruited and led the initial Ruby on Rails technology team, for a company that has since grown to over 2k employees."
+      - "As first employee, technical lead and PM, I set the technology direction with the founders, recruited and led the initial Ruby on Rails engineering team, for a company that has since grown to over 2k employees."
       - "Architected and built a bespoke CRM and customer-portal system underpinning the firm's client communications."
-      - "Role covered technical recruitment, coding standards, best practices and mentoring, as well as gathering requirements, writing specifications, data modelling and designing the system architecture."
+      - "Role covered product management, technical recruitment, coding standards, best practices, leadership, and system architecture."
 
 additional:
   - role: "Co-Founder"

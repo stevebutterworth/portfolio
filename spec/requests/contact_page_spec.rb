@@ -7,7 +7,7 @@ RSpec.describe "Contact page", type: :request do
 
     expect(response.body).to include("Let&rsquo;s build something.")
     expect(response.body).to include("Available for work")
-    expect(response.body).to include("steve@steveb.io")
+    expect(response.body).to include("hello@stevebutterworth.co.uk")
     expect(response.body).to include("Ipswich, Suffolk")
     expect(response.body).to include("https://www.linkedin.com/in/stevebutterworth/")
 
@@ -19,8 +19,8 @@ RSpec.describe "Contact page", type: :request do
     expect(response.body).to include('name="message"')
     expect(response.body).to include('name="botcheck"')
     expect(response.body).to include('name="subject"')
-    expect(response.body).to include('value="New message from steveb.io"')
+    expect(response.body).to include('value="New message from stevebutterworth.co.uk"')
     expect(response.body).to include('name="from_name"')
-    expect(response.body).to include('value="steveb.io contact form"')
+    expect(response.body).to include('value="stevebutterworth.co.uk contact form"')
   end
 end

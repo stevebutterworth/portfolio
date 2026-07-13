@@ -1,4 +1,4 @@
-# steveb.io
+# stevebutterworth.co.uk
 
 The source for Steve Butterworth's portfolio and CV site. A small, deliberately
 plain Rails 8 application: no database for content, no JavaScript build step, no
