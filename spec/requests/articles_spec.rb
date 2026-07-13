@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Articles", type: :request do
+RSpec.describe "Articles", type: :request, skip: "Writing is disabled until real posts are published" do
   describe "GET /writing" do
     it "lists all articles with meta line, title, excerpt and tags" do
       get "/writing"

@@ -5,7 +5,6 @@
   <div class="flex gap-4 text-xs font-semibold uppercase tracking-widest md:gap-6">
     <a href="/" class="<%= current_page?("/") ? "text-accent" : "text-ink" %>">Work</a>
     <a href="/cv" class="<%= request.path.start_with?("/cv") ? "text-accent" : "text-ink" %>">CV</a>
-    <a href="/writing" class="<%= request.path.start_with?("/writing") ? "text-accent" : "text-ink" %>">Writing</a>
     <a href="/contact" class="<%= request.path.start_with?("/contact") ? "text-accent" : "text-ink" %>">Contact</a>
   </div>
 </nav>

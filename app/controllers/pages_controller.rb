@@ -4,6 +4,5 @@ class PagesController < ApplicationController
   end
 
   def sitemap
-    @articles = Article.all
   end
 end

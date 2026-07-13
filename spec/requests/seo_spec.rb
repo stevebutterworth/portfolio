@@ -24,23 +24,6 @@ RSpec.describe "SEO", type: :request do
       expect(response.body).to include('<meta property="og:title" content="CV · Steve Butterworth">')
     end
 
-    it "sets the writing index title and og:title" do
-      get "/writing"
-
-      expect(response.body).to include("<title>Writing · Steve Butterworth</title>")
-      expect(response.body).to include('<meta property="og:title" content="Writing · Steve Butterworth">')
-    end
-
-    it "sets the article title, og:type article and its own cover as og:image" do
-      article = Article.all.first
-      get "/writing/#{article.slug}"
-
-      expect(response.body).to include("<title>#{article.title} · Steve Butterworth</title>")
-      expect(response.body).to include(%(<meta property="og:title" content="#{article.title} · Steve Butterworth">))
-      expect(response.body).to include('<meta property="og:type" content="article">')
-      expect(response.body).to include(%(<meta property="og:image" content="http://www.example.com/media/#{article.cover}">))
-    end
-
     it "sets the contact page title and og:title" do
       get "/contact"
 
@@ -63,15 +46,6 @@ RSpec.describe "SEO", type: :request do
       expect(response.body).to match(%r{<a href="/cv" class="[^"]*text-accent[^"]*">CV</a>})
     end
 
-    it "marks Writing active on /writing and stays active on an article page" do
-      get "/writing"
-      expect(response.body).to match(%r{<a href="/writing" class="[^"]*text-accent[^"]*">Writing</a>})
-
-      article = Article.all.first
-      get "/writing/#{article.slug}"
-      expect(response.body).to match(%r{<a href="/writing" class="[^"]*text-accent[^"]*">Writing</a>})
-    end
-
     it "marks Contact active on /contact" do
       get "/contact"
       expect(response.body).to match(%r{<a href="/contact" class="[^"]*text-accent[^"]*">Contact</a>})
@@ -79,18 +53,13 @@ RSpec.describe "SEO", type: :request do
   end
 
   describe "GET /sitemap.xml" do
-    it "lists root, cv, writing and every article url" do
+    it "lists root and cv" do
       get "/sitemap.xml"
 
       expect(response).to have_http_status(:ok)
       expect(response.media_type).to eq("application/xml")
       expect(response.body).to include("<loc>http://www.example.com/</loc>")
       expect(response.body).to include("<loc>http://www.example.com/cv</loc>")
-      expect(response.body).to include("<loc>http://www.example.com/writing</loc>")
-
-      Article.all.each do |article|
-        expect(response.body).to include("<loc>http://www.example.com/writing/#{article.slug}</loc>")
-      end
     end
   end
 
