@@ -11,7 +11,7 @@ pdf: "cv.pdf"
 education: "1st Class BSc (Hons) Computer Science"
 
 profile: >
-  Product engineer with 20+ years building, shipping and owning software end to
+  Full-stack engineer with 20+ years building, shipping and owning software end to
   end, from customer conversation to production and long-term operation. Founder of
   Changeflow (AI-powered monitoring SaaS, trusted by Am Law 200 firms) and the
   engineer behind EnvironmentJob for 13 years; previously delivered live data
@@ -32,14 +32,15 @@ skills:
 jobs:
   - role: "Founder & Rails Engineer"
     org: "Changeflow"
-    context: "Bootstrapped AI-powered website monitoring and alerting SaaS (now in maintenance mode)"
+    context: "Bootstrapped AI-powered website monitoring and alerting SaaS"
     when: "2023 - Present"
     bullets:
-      - "Founded, built and operate a production Rails SaaS for website monitoring, change detection and customer alerting, trusted by Am Law 200 firms to catch business-critical changes."
+      - "Founded, built and operate a production Rails SaaS for website monitoring, change detection and customer alerting."
       - "Designed the core data model, monitoring pipeline, background jobs and notification workflows end to end."
       - "Integrated Puppeteer/Node.js browser automation with Rails, PostgreSQL, Redis and Faktory/Sidekiq."
       - "Built LLM pipelines for classification, summarisation and cleaning, plus an in-app AI agent."
-      - "I own deployment, production reliability, support and the customer feedback loop."
+      - "I owned the full lifecycle, deployment, production reliability and support."
+      - "Bootstrapped AI-powered website monitoring SaaS. Now a maintained side project rather than a full-time venture."
 
   - role: "Senior Rails Engineer"
     org: "Environmentjob.co.uk (Contract)"
@@ -48,7 +49,8 @@ jobs:
     bullets:
       - "Build and maintain systems for job search, advertiser and job-seeker tools, admin workflow, CRM and reporting."
       - "Data modelling, Elasticsearch for full-text search, faceted filtering and an email alert system sending over 150k/week."
-      - "Built CRM, admin workflow and AI import, clean-up and classification systems."
+      - "Built AI import, clean-up and classification systems."
+      - "Built a software tool for monitoring relevent new job posting across hundreds of websites"
       - "Full maintenance and upgrade journey from Rails 1 to Rails 8."
 
   - role: "Senior Rails Engineer"
