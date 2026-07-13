@@ -10,7 +10,7 @@ RSpec.describe "Cv page", type: :request do
     cv.title.split(" · ").each { |part| expect(response.body).to include(part) }
     expect(response.body).to include("Core skills")
     expect(response.body).to include(">Experience</span>")
-    expect(response.body).to include("Environmentjob.co.uk (Retained)")
+    expect(response.body).to include("Environmentjob.co.uk (Contract)")
     expect(response.body).to include("Additional experience")
     expect(response.body).to include(cv_pdf_path)
     expect(response.body).to include("data-clipboard-text=")

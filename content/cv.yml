@@ -1,19 +1,19 @@
 # Steve Butterworth CV. Rendered by the /cv page and the "Copy for AI" button.
 # No em-dashes anywhere. Date ranges use a plain hyphen.
 name: "Steve Butterworth"
-title: "Senior Product Engineer · Ruby on Rails"
-tagline: "Rails/Ruby · PostgreSQL · Elasticsearch · Data ingestion · Kafka · 1st Class BSc (Hons) Comp Sci"
+title: "Senior Rails Engineer"
+tagline: "Rails/Ruby · Full-stack · PostgreSQL · Elasticsearch · Stimulus · 1st Class BSc (Hons) Comp Sci"
 location: "Ipswich, Suffolk"
 email: "steve@steveb.io"
 linkedin: "https://linkedin.com/in/stevebutterworth"
 github: "https://github.com/stevebutterworth"
-pdf: "cv.pdf"                            # TODO: drop your hand-made PDF at content/cv.pdf
+pdf: "cv.pdf"
 education: "1st Class BSc (Hons) Computer Science"
 
 profile: >
   Product engineer with 20+ years building, shipping and owning software end to
   end, from customer conversation to production and long-term operation. Founder of
-  Changeflow (AI-powered monitoring SaaS, trusted by Am Law 200 firms) and retained
+  Changeflow (AI-powered monitoring SaaS, trusted by Am Law 200 firms) and the
   engineer behind EnvironmentJob for 13 years; previously delivered live data
   systems for The Open Championship and Indy 500 at over a million visits a day.
 
@@ -23,13 +23,14 @@ profile: >
 
 skills:
   Backend: "Ruby on Rails, API design, Sidekiq, RSpec"
-  Data: "PostgreSQL, Elasticsearch, Redis, Kafka, ingestion, validation, rollups"
+  Frontend: "Stimulus, Turbo, React, Tailwind, D3.js, Three.js"
+  Data: "PostgreSQL, Elasticsearch, Redis, Kafka"
   "Operational tools": "Dashboards, admin workflows, reporting, alerting, monitoring, customer-facing reliability"
   "AI/ML support": "LLM classification, summarisation, data cleanup, prompt/workflow integration"
   "Engineering practices": "Automated testing, CI, coding standards, documentation, stakeholder communication"
 
 jobs:
-  - role: "Founder & Product Engineer"
+  - role: "Founder & Rails Engineer"
     org: "Changeflow"
     context: "Bootstrapped AI-powered website monitoring and alerting SaaS, built and operated end to end"
     when: "2023 - Present"
@@ -41,30 +42,28 @@ jobs:
       - "Own deployment, production reliability, support and the customer feedback loop."
 
   - role: "Senior Rails Engineer"
-    org: "Environmentjob.co.uk (Retained)"
-    context: "Retained engineer for the UK's leading environmental jobs platform"
+    org: "Environmentjob.co.uk (Contract)"
+    context: "The UK's leading environmental jobs platform"
     when: "2013 - Present"
     bullets:
-      - "Build and maintain systems for job search, advertiser tools, admin workflow, CRM and reporting."
-      - "Job board plus comprehensive admin, advertiser and job-seeker portals from scratch."
+      - "Build and maintain systems for job search, advertiser and job-seeker tools, admin workflow, CRM and reporting."
       - "Data modelling, Elasticsearch for full-text search, faceted filtering and an email alert system sending over 150k/week."
       - "Built CRM, admin workflow and AI import, clean-up and classification systems."
       - "Full maintenance and upgrade journey from Rails 1 to Rails 8."
 
   - role: "Senior Rails Engineer"
-    org: "NTT Data (Project contracts)"
+    org: "NTT Data (Contract)"
     context: "Engaged via LEX & Pulse Group"
     when: "2014 - 2023"
     bullets:
       - "Delivered time-critical live data-ingestion and visualisation systems for NTT DATA sports sponsorships including The Open, BMW International Open and Indy 500."
       - "Integrated Kafka, XML posts, WebSocket feeds, HTTP streaming, GPS/timing data and weather polling into live event data pipelines."
-      - "Validated, reconciled and synchronised high-frequency live data feeds for real-time visualisations under fixed event deadlines."
-      - "Used PostgreSQL staging tables, bulk loading, rollups and aggregations to support performant analysis and derived display state."
       - "Built Rails/JS/D3.js/Three.js systems powering live 3D shot tracking, public websites and large-format event displays."
-      - "From creative concepts to over 1 million daily visits in 4 months, against immovable deadlines."
+      - "Liased closely with end-clients to go from creative concepts to over 1 million daily visits in 4 months."
+      - "Led a small team of software engineers and worked in a wider multi-displenery team including creative directors and designers."
 
   - role: "Senior Rails Engineer"
-    org: "GSK MVOC Analyser (Project)"
+    org: "GSK MVOC Analyser (Contract)"
     context: "Engaged by AI firm Retechnica"
     when: "2019"
     bullets:
