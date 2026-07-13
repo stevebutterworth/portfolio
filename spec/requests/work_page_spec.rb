@@ -24,8 +24,8 @@ RSpec.describe "Work page", type: :request do
 
   it "uses the branded double-slash favicon" do
     get "/"
-    expect(response.body).to include('href="/icon.svg?v=slashes"')
-    expect(response.body).to include('href="/icon.png?v=slashes"')
+    expect(response.body).to include('href="/icon.svg?v=cobalt"')
+    expect(response.body).to include('href="/icon.png?v=cobalt"')
 
     favicon = Nokogiri::XML(Rails.root.join("public/icon.svg").read)
     expect(favicon.xpath("//*[local-name()='path']").size).to eq(2)
