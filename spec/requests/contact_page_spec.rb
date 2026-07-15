@@ -7,7 +7,8 @@ RSpec.describe "Contact page", type: :request do
 
     expect(response.body).to include("Let&rsquo;s build something.")
     expect(response.body).to include("Available for work")
-    expect(response.body).to include("hello@stevebutterworth.co.uk")
+    expect(response.body).to include("stevebutterworth [at] me.com")
+    expect(response.body).not_to include("stevebutterworth@me.com")
     expect(response.body).to include("Ipswich, Suffolk")
     expect(response.body).to include("https://www.linkedin.com/in/stevebutterworth/")
 
