@@ -102,8 +102,10 @@
   /* Compact one-line entries (earlier roles, additional) */
   .compact li { margin-bottom: 3pt; }
 
-  /* Move this div to choose exactly where page 1 ends */
-  .page-break { break-after: page; }
+  /* Put this class on the first .job of page 2 to choose where page 1 ends.
+     Never use an empty div with break-after: page - it produces a blank page
+     when page 1 fills exactly. */
+  .new-page { break-before: page; }
 </style>
 </head>
 <body>
@@ -148,8 +150,7 @@
     </ul>
   </article>
 
-  <!-- Place between two .job articles so page 1 ends exactly where you choose: -->
-  <div class="page-break"></div>
+  <!-- The first role of page 2 gets: <article class="job new-page"> -->
 
 </section>
 

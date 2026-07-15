@@ -34,12 +34,15 @@ for tailoring the next one.
 
 The split must look intentional, never accidental.
 
-- An explicit `<div class="page-break"></div>` between two `.job` articles
-  decides where page 1 ends. Place it so page 1 ends flush at a natural
-  boundary (after a complete role), never mid-entry.
+- The first role of page 2 carries `class="job new-page"`
+  (`.new-page { break-before: page; }`). That decides where page 1 ends: flush
+  at a natural boundary (after a complete role), never mid-entry.
+- Do NOT use an empty `<div>` with `break-after: page` instead: when page 1
+  fills exactly, the div itself slips onto page 2 and its forced break then
+  produces a blank page. `break-before` on the real element cannot do that.
 - `.job { break-inside: avoid }` and `h2 { break-after: avoid }` are the safety
   net, not the mechanism. Do not rely on natural flow for the split.
-- Tuning knobs, in order of preference: move the `.page-break`; adjust
+- Tuning knobs, in order of preference: move the `.new-page` class; adjust
   `body { font-size }` (9.3-10pt); adjust `section { margin-top }` and
   `.job { margin-bottom }`; trim copy (with the user, in the Markdown).
 - Target: page 1 full to within ~2 lines of the bottom; page 2 at least
