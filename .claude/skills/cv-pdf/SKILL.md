@@ -12,21 +12,21 @@ drafts, filled templates and application PDFs all live there safely.
 
 ## Workflow
 
-1. **Copy is upstream.** The Markdown draft (`content/_<application>_cv.md`) is
-   the single source of wording. Edit copy there first; the HTML only holds
-   layout. If asked to change wording, change the Markdown too so they stay in
-   step.
-2. Copy `.claude/skills/cv-pdf/template.html` to
-   `content/_<application>_cv.html` and fill every placeholder from the
-   Markdown, section by section. Delete sections the draft does not have.
-   Escape `&` as `&amp;`. An existing filled example: `content/_nesta_cv.html`.
-3. Generate: `bin/cv-pdf content/_<application>_cv.html`
+1. **The HTML is the working file** — one per application,
+   `content/_<application>_cv.html`. Start by copying the closest existing CV
+   (base: `content/_nesta_cv.html`) and tailor the wording directly in the
+   HTML; it is deliberately copy-editable (one bullet per `li`). Only fall
+   back to `.claude/skills/cv-pdf/template.html` when starting a structurally
+   different CV from scratch. Escape `&` as `&amp;`.
+   Do not create new Markdown drafts: `content/_nesta_cv.md` is the original
+   base copy, kept for reference, and is not maintained in step with the HTML.
+2. Generate: `bin/cv-pdf content/_<application>_cv.html`
    Writes the PDF next to the HTML and **fails if the page count is not 2**
    (override with `--pages N`).
-4. **Verify visually, always.** Render both pages and look at them:
+3. **Verify visually, always.** Render both pages and look at them:
    `pdftoppm -png -r 80 content/_<application>_cv.pdf /tmp/cv`
    then Read `/tmp/cv-1.png` and `/tmp/cv-2.png`. Check the checklist below.
-5. Iterate the break and density (see below) until both pages look deliberate.
+4. Iterate the break and density (see below) until both pages look deliberate.
 
 ## The two-page break
 
