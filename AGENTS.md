@@ -11,7 +11,7 @@ including production. RSpec for tests. Deployed with Kamal 2. See @README.md for
 - `bin/rubocop` / `bin/rubocop -a` — lint / autofix (rubocop-rails-omakase)
 - `bin/brakeman` — security scan
 - `bin/importmap pin <pkg>` — add a JS dependency
-- `bin/cv-pdf content/_<app>_cv.html` — print a CV to a two-page PDF (workflow: `.claude/skills/cv-pdf`)
+- `bin/cv-pdf content/cvs/<app>.html` — print a CV to a two-page PDF (workflow: `.claude/skills/cv-pdf`)
 - Deploy: `kamal deploy`; `kamal console`; `kamal logs`; `kamal app exec --primary "bin/rails db:migrate"`
 
 YOU MUST run `bundle exec rspec` and `bin/rubocop` before considering any task complete.

@@ -5,26 +5,28 @@ description: Generate a two-page, ATS-safe PDF CV from a Markdown copy draft. Us
 
 # CV PDF generation
 
-Turns a Markdown CV copy draft (e.g. `content/_nesta_cv.md`) into a clean,
-two-page, ATS-readable A4 PDF via an HTML template and headless Chrome.
-Underscore-prefixed files in `content/` are never rendered by the site, so
-drafts, filled templates and application PDFs all live there safely.
+Produces clean, two-page, ATS-readable A4 PDF CVs from HTML via headless
+Chrome. Every version lives in `content/cvs/`, one HTML + PDF pair per
+application, named by application (`nesta.html`, `nesta.pdf`). The site never
+reads that directory, and past versions are kept: they are the raw material
+for tailoring the next one.
 
 ## Workflow
 
-1. **The HTML is the working file** — one per application,
-   `content/_<application>_cv.html`. Start by copying the closest existing CV
-   (base: `content/_nesta_cv.html`) and tailor the wording directly in the
-   HTML; it is deliberately copy-editable (one bullet per `li`). Only fall
-   back to `.claude/skills/cv-pdf/template.html` when starting a structurally
+1. **The HTML is the working file** — `content/cvs/<application>.html`. Start
+   by copying the closest existing version in `content/cvs/` (base:
+   `nesta.html`) and tailor the wording directly in the HTML; it is
+   deliberately copy-editable (one bullet per `li`). Only fall back to
+   `.claude/skills/cv-pdf/template.html` when starting a structurally
    different CV from scratch. Escape `&` as `&amp;`.
-   Do not create new Markdown drafts: `content/_nesta_cv.md` is the original
+   Do not create new Markdown drafts: `content/cvs/nesta.md` is the original
    base copy, kept for reference, and is not maintained in step with the HTML.
-2. Generate: `bin/cv-pdf content/_<application>_cv.html`
+   Never delete old versions; they might be useful.
+2. Generate: `bin/cv-pdf content/cvs/<application>.html`
    Writes the PDF next to the HTML and **fails if the page count is not 2**
    (override with `--pages N`).
 3. **Verify visually, always.** Render both pages and look at them:
-   `pdftoppm -png -r 80 content/_<application>_cv.pdf /tmp/cv`
+   `pdftoppm -png -r 80 content/cvs/<application>.pdf /tmp/cv`
    then Read `/tmp/cv-1.png` and `/tmp/cv-2.png`. Check the checklist below.
 4. Iterate the break and density (see below) until both pages look deliberate.
 
@@ -77,6 +79,6 @@ Keep these invariants when editing the template or a filled CV:
 
 `content/cv.pdf` (served at `/cv.pdf`) can be regenerated the same way: build
 the copy from `content/cv.yml` (the `Cv` model's `to_markdown` shows the
-canonical ordering), fill the template, and output over `content/cv.pdf` with
-`bin/cv-pdf content/_site_cv.html content/cv.pdf`. Confirm with the user
-before overwriting the served PDF.
+canonical ordering), fill the template as `content/cvs/site.html`, and output
+over `content/cv.pdf` with `bin/cv-pdf content/cvs/site.html content/cv.pdf`.
+Confirm with the user before overwriting the served PDF.
