@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- Nesta Creative Technologist / Fullstack Developer application.
+     Source copy: content/_nesta_cv.md. Generate with: bin/cv-pdf content/_nesta_cv.html
+     Layout rules live in .claude/skills/cv-pdf/SKILL.md. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Steve Butterworth CV</title>
+<style>
+  :root {
+    --ink: #1c2230;
+    --muted: #596172;
+    --accent: #1d4ed8;
+    --rule: #d8dce4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 13mm 16mm 14mm; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.42;
+    color: var(--ink);
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Header */
+  .cv-header { margin-bottom: 4pt; }
+  h1 {
+    font-size: 21pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 1pt;
+  }
+  .headline {
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 4pt;
+  }
+  .contact {
+    font-size: 8.6pt;
+    color: #596172;
+  }
+  .contact span { white-space: nowrap; }
+  .contact span:not(:last-child)::after { content: "\00a0\00a0\00b7"; color: #9aa1af; }
+
+  /* Sections */
+  section { margin-top: 11pt; }
+  h2 {
+    font-size: 8.4pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    border-bottom: 0.75pt solid var(--rule);
+    padding-bottom: 2.5pt;
+    margin-bottom: 6.5pt;
+    break-after: avoid;
+  }
+
+  ul { list-style: none; }
+  li {
+    padding-left: 9pt;
+    position: relative;
+    margin-bottom: 2.5pt;
+  }
+  li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: #9aa1af;
+  }
+
+  /* Job entries */
+  .job { margin-bottom: 8.5pt; break-inside: avoid; }
+  .job:last-child { margin-bottom: 0; }
+  .job-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12pt;
+  }
+  h3 { font-size: 10pt; font-weight: 700; }
+  h3 .org { font-weight: 500; }
+  .dates {
+    font-size: 8.6pt;
+    color: #596172;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .context {
+    font-size: 9.2pt;
+    color: #596172;
+    margin: 1pt 0 3pt;
+  }
+  .job ul { margin-top: 2pt; }
+
+  /* Compact one-line entries (earlier roles, additional) */
+  .compact li { margin-bottom: 3pt; }
+
+  .page-break { break-after: page; }
+</style>
+</head>
+<body>
+
+<header class="cv-header">
+  <h1>Steve Butterworth</h1>
+  <p class="headline">Full-stack developer and product builder (Ruby on Rails)</p>
+  <p class="contact">
+    <span>Ipswich, Suffolk (hybrid London)</span>
+    <span><a href="mailto:hello@stevebutterworth.co.uk">hello@stevebutterworth.co.uk</a></span>
+    <span><a href="https://stevebutterworth.co.uk">stevebutterworth.co.uk</a></span>
+    <span><a href="https://github.com/stevebutterworth">github.com/stevebutterworth</a></span>
+    <span><a href="https://linkedin.com/in/stevebutterworth">linkedin.com/in/stevebutterworth</a></span>
+  </p>
+</header>
+
+<section>
+  <h2>Profile</h2>
+  <p>Full-stack developer who turns half-formed ideas into working software in days, then
+  keeps it running in production for years. Have shipped more than 30 Rails applications,
+  largely solo, for the web, for mobile and once for a 30-metre screen; between them they
+  have served millions of users. Founded an AI-powered monitoring SaaS, and sole engineer
+  behind the UK's leading environmental jobs platform for 13 years, Rails 1 to Rails 8.
+  Happiest owning the whole loop: talking to non-technical stakeholders, getting a rough
+  version in front of people for early sign-off, then supporting what ships. Years of hard
+  live-event deadlines bred a lasting taste for simple solutions that hold up.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul>
+    <li><strong>Programming and build:</strong> Ruby on Rails (versions 1 to 8), HTML/CSS/JavaScript, Hotwire (Turbo/Stimulus), Tailwind, React, D3.js, PostgreSQL, SQLite, Elasticsearch, Git/GitHub. Daily use of AI coding tools (Claude Code, Codex) with strict workflows for task breakdown, test-first development, coding standards and security/performance audits.</li>
+    <li><strong>Prototyping and product development:</strong> working proofs of concept in days to win stakeholder sign-off; rough versions in front of users early and often; quick to pick up new tools.</li>
+    <li><strong>Service support:</strong> 13+ years running production services solo; monitoring, alerting, fault diagnosis and root-cause fixes.</li>
+    <li><strong>Information security:</strong> secure coding, authentication and authorisation, Brakeman static analysis and dependency scanning in CI.</li>
+    <li><strong>Systems design:</strong> a bias for the least machinery that works (SQLite and Solid Queue over Redis and Sidekiq where they fit); complexity added only once a product has earned it.</li>
+    <li><strong>Systems integration:</strong> third-party APIs, live data feeds, browser automation and LLM services woven into products, from quick proof of concept to robust production; RSpec automated testing throughout.</li>
+    <li><strong>User focus and communication:</strong> direct daily contact with non-technical customers and stakeholders; plain-English explanation of technical trade-offs; comfortable bridging design, product and engineering.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <article class="job">
+    <div class="job-line">
+      <h3>Founder &amp; Developer, <span class="org">Changeflow</span></h3>
+      <span class="dates">2023 - Present</span>
+    </div>
+    <p class="context">Bootstrapped AI-powered website monitoring and alerting SaaS, trusted by Am Law 200 law firms.</p>
+    <ul>
+      <li>Shipped the first working product in weeks, solo, and release small improvements continuously; own everything from customer conversations to deployment, reliability and support.</li>
+      <li>Built LLM pipelines for classification, summarisation and data cleaning, plus an in-app tool-calling AI agent.</li>
+      <li>Integrated Rails with Puppeteer browser automation, PostgreSQL, Redis and background job processing.</li>
+      <li>Embedded security from the start: authentication, authorisation, Brakeman static analysis and dependency scanning in CI.</li>
+    </ul>
+  </article>
+
+  <article class="job">
+    <div class="job-line">
+      <h3>Senior Rails Developer (sole engineer), <span class="org">EnvironmentJob</span></h3>
+      <span class="dates">2013 - Present</span>
+    </div>
+    <p class="context">The UK's leading environmental jobs platform: 13 years serving the environmental employment sector.</p>
+    <ul>
+      <li>Sole engineer behind the whole product: search, advertiser and job-seeker tools, admin, CRM and reporting. Ship changes in days and they stay in production for years without a team behind them.</li>
+      <li>Built Elasticsearch full-text search with faceted filtering and an email alert system sending over 150k emails a week.</li>
+      <li>Built AI-powered import, clean-up and classification systems, and a tool monitoring new job postings across hundreds of websites.</li>
+      <li>Carried the platform through every upgrade from Rails 1 to Rails 8; when something breaks, fix the cause rather than patch the symptom.</li>
+    </ul>
+  </article>
+
+  <div class="page-break"></div>
+
+  <article class="job">
+    <div class="job-line">
+      <h3>Senior Rails Developer, <span class="org">LEX (contract)</span></h3>
+      <span class="dates">2019 - 2023</span>
+    </div>
+    <p class="context">Live-event and conference products delivered for NTT DATA sports sponsorships including The Open Championship and Indy 500.</p>
+    <ul>
+      <li>Built ShotView (live 3D golf shot tracking in Three.js), a digital twin and large-format live event data walls.</li>
+      <li>Built tablet and mobile apps for live brand activations, and touch-screen conference interactives including live polling and games.</li>
+    </ul>
+  </article>
+
+  <article class="job">
+    <div class="job-line">
+      <h3>Senior Rails Developer, <span class="org">GSK MVOC Analyser (contract, via Retechnica)</span></h3>
+      <span class="dates">2019</span>
+    </div>
+    <ul>
+      <li>Built a medical voice-of-customer reporting dashboard: an early proof of concept in days for stakeholder sign-off, then analysis, interactive visualisation and PDF/PPT export; delivered on time and on budget, scoring 9/10 satisfaction from 50+ stakeholders.</li>
+    </ul>
+  </article>
+
+  <article class="job">
+    <div class="job-line">
+      <h3>Senior Rails Developer, <span class="org">Pulse Group (contract)</span></h3>
+      <span class="dates">2013 - 2018</span>
+    </div>
+    <p class="context">Live-event digital products delivered for NTT DATA sports sponsorships (The Open Championship, BMW International Open), Emirates Airline and Team GB.</p>
+    <ul>
+      <li>Turned creative concepts into working proofs of concept in days to win sign-off, then grew them into products serving over 1 million visits a day within 4 months.</li>
+      <li>Built live event data walls and public event websites in Rails/JavaScript/D3.js.</li>
+      <li>Delivered big live data screens for Team GB at the Olympic Games, and reporting tools and touch-screen interactives for Emirates Airline.</li>
+      <li>Led a small engineering team within a wider multidisciplinary team of creative directors, designers and producers.</li>
+    </ul>
+  </article>
+
+  <article class="job">
+    <div class="job-line">
+      <h3>Founder &amp; Lead Developer, <span class="org">Flumes</span></h3>
+      <span class="dates">2010 - 2013</span>
+    </div>
+    <ul>
+      <li>Founded and built a social media analytics and visualisation platform from zero: live social data collected, enriched via third-party classification APIs and made explorable through interactive visualisation.</li>
+      <li>The platform became the technical foundation for later live-event work delivered for the likes of Cambridge University Press and Team GB.</li>
+    </ul>
+  </article>
+
+  <article class="job">
+    <div class="job-line">
+      <h3>Lead Rails Developer, <span class="org">AlphaSights</span></h3>
+      <span class="dates">2008 - 2010</span>
+    </div>
+    <ul>
+      <li>First employee: set the technology direction with the founders, recruited and led the initial Rails team, and built the bespoke CRM and client portal underpinning the firm's communications. The company has since grown to over 2,000 employees.</li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <h2>Earlier Roles</h2>
+  <ul class="compact">
+    <li><strong>Rails &amp; PHP Developer, Humble Technologies</strong> (2006 - 2008): web consultancy for UK clients.</li>
+    <li><strong>Senior Software Engineer, i2 Inc. (now IBM)</strong> (2002 - 2005): led the web version of the flagship analytics tool; built a Java/JS charting SDK.</li>
+    <li><strong>Software Developer, Crystal Decisions (now SAP)</strong> (1999 - 2001): enterprise OLAP components and a front-end JavaScript SDK; mentored new developers.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Additional</h2>
+  <ul class="compact">
+    <li><strong>Co-Founder, Unicorn Studios Ipswich</strong> (2019 - Present): co-founded a not-for-profit community co-working space for remote workers, freelancers and contractors.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <p><strong>BSc (Hons) Computer Science, 1st Class</strong></p>
+</section>
+
+</body>
+</html>

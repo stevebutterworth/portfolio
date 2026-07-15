@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+# Prints an HTML CV to PDF with headless Chrome and checks it came out at the
+# expected page count. See .claude/skills/cv-pdf/SKILL.md for the full workflow.
+#
+#   bin/cv-pdf content/_nesta_cv.html                 # writes content/_nesta_cv.pdf, expects 2 pages
+#   bin/cv-pdf content/_nesta_cv.html out.pdf         # explicit output path
+#   bin/cv-pdf content/_nesta_cv.html --pages 1       # different expected page count
+
+CHROME_CANDIDATES = [
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "/Applications/Chromium.app/Contents/MacOS/Chromium",
+  "google-chrome",
+  "chromium"
+].freeze
+
+def fail_with(message)
+  warn "cv-pdf: #{message}"
+  exit 1
+end
+
+args = ARGV.dup
+expected_pages = 2
+if (flag = args.index("--pages"))
+  expected_pages = Integer(args.delete_at(flag + 1))
+  args.delete_at(flag)
+end
+
+input, output = args
+fail_with "usage: bin/cv-pdf INPUT.html [OUTPUT.pdf] [--pages N]" if input.nil?
+fail_with "no such file: #{input}" unless File.exist?(input)
+output ||= input.sub(/\.html?\z/, "") + ".pdf"
+
+chrome = CHROME_CANDIDATES.find { |path| File.executable?(path) || system("command -v #{path} > /dev/null 2>&1") }
+fail_with "could not find a Chrome/Chromium binary" if chrome.nil?
+
+ok = system(
+  chrome,
+  "--headless=new",
+  "--disable-gpu",
+  "--no-pdf-header-footer",
+  "--print-to-pdf=#{File.expand_path(output)}",
+  "file://#{File.expand_path(input)}",
+  err: File::NULL
+)
+fail_with "Chrome failed to print #{input}" unless ok && File.exist?(output)
+
+pages =
+  if system("command -v pdfinfo > /dev/null 2>&1")
+    `pdfinfo #{File.expand_path(output)}`[/^Pages:\s+(\d+)/, 1]&.to_i
+  else
+    File.binread(output).scan(%r{/Type\s*/Pages[^>]*?/Count\s+(\d+)}).flatten.map(&:to_i).max
+  end
+
+if pages.nil?
+  warn "cv-pdf: wrote #{output} but could not determine the page count; check it by hand"
+elsif pages == expected_pages
+  puts "cv-pdf: wrote #{output} (#{pages} pages)"
+else
+  fail_with "wrote #{output} but it is #{pages} pages, expected #{expected_pages}. " \
+            "Move the .page-break div or trim/tighten content, then rerun."
+end

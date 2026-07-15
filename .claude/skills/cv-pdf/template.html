@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- CV template: two-page, ATS-safe, A4. Workflow in .claude/skills/cv-pdf/SKILL.md.
+     Copy to content/_<application>_cv.html, fill from the Markdown copy draft,
+     then: bin/cv-pdf content/_<application>_cv.html
+     UPPERCASE tokens are placeholders. Delete any section the copy does not have. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>NAME CV</title>
+<style>
+  :root {
+    --ink: #1c2230;
+    --muted: #596172;
+    --accent: #1d4ed8; /* cobalt, matches the site */
+    --rule: #d8dce4;
+    --dot: #9aa1af;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 13mm 16mm 14mm; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9.6pt; /* tuning knob: 9.3-10pt to balance the two pages */
+    line-height: 1.42;
+    color: var(--ink);
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Header */
+  .cv-header { margin-bottom: 4pt; }
+  h1 {
+    font-size: 21pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 1pt;
+  }
+  .headline {
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 4pt;
+  }
+  .contact {
+    font-size: 8.6pt;
+    color: var(--muted);
+  }
+  .contact span { white-space: nowrap; }
+  .contact span:not(:last-child)::after { content: "\00a0\00a0\00b7"; color: var(--dot); }
+
+  /* Sections */
+  section { margin-top: 11pt; }
+  h2 {
+    font-size: 8.4pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    border-bottom: 0.75pt solid var(--rule);
+    padding-bottom: 2.5pt;
+    margin-bottom: 6.5pt;
+    break-after: avoid;
+  }
+
+  ul { list-style: none; }
+  li {
+    padding-left: 9pt;
+    position: relative;
+    margin-bottom: 2.5pt;
+  }
+  li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: var(--dot);
+  }
+
+  /* Job entries */
+  .job { margin-bottom: 8.5pt; break-inside: avoid; }
+  .job:last-child { margin-bottom: 0; }
+  .job-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12pt;
+  }
+  h3 { font-size: 10pt; font-weight: 700; }
+  h3 .org { font-weight: 500; }
+  .dates {
+    font-size: 8.6pt;
+    color: var(--muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .context {
+    font-size: 9.2pt;
+    color: var(--muted);
+    margin: 1pt 0 3pt;
+  }
+  .job ul { margin-top: 2pt; }
+
+  /* Compact one-line entries (earlier roles, additional) */
+  .compact li { margin-bottom: 3pt; }
+
+  /* Move this div to choose exactly where page 1 ends */
+  .page-break { break-after: page; }
+</style>
+</head>
+<body>
+
+<header class="cv-header">
+  <h1>NAME</h1>
+  <p class="headline">HEADLINE, e.g. Full-stack developer and product builder (Ruby on Rails)</p>
+  <p class="contact">
+    <span>LOCATION</span>
+    <span><a href="mailto:EMAIL">EMAIL</a></span>
+    <span><a href="https://WEBSITE">WEBSITE</a></span>
+    <span><a href="https://GITHUB_URL">GITHUB_URL (no scheme)</a></span>
+    <span><a href="https://LINKEDIN_URL">LINKEDIN_URL (no scheme)</a></span>
+  </p>
+</header>
+
+<section>
+  <h2>Profile</h2>
+  <p>PROFILE PARAGRAPH, one block, roughly 90-120 words.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul>
+    <li><strong>CATEGORY:</strong> comma-separated keywords and a short plain-English gloss.</li>
+    <!-- Repeat per category. Keep keywords as literal text: this is what ATS matching reads. -->
+  </ul>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <!-- Reverse chronological. Repeat this block per role. -->
+  <article class="job">
+    <div class="job-line">
+      <h3>ROLE, <span class="org">ORGANISATION (contract, if so)</span></h3>
+      <span class="dates">YYYY - YYYY or Present</span>
+    </div>
+    <p class="context">Optional one-line context: what the org/product is. Omit the p entirely if none.</p>
+    <ul>
+      <li>Achievement bullet: action verb first, concrete outcome, numbers where honest.</li>
+    </ul>
+  </article>
+
+  <!-- Place between two .job articles so page 1 ends exactly where you choose: -->
+  <div class="page-break"></div>
+
+</section>
+
+<section>
+  <h2>Earlier Roles</h2>
+  <ul class="compact">
+    <li><strong>ROLE, ORGANISATION</strong> (YYYY - YYYY): one-line summary.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Additional</h2>
+  <ul class="compact">
+    <li><strong>ROLE, ORGANISATION</strong> (YYYY - Present): one-line summary.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <p><strong>DEGREE, CLASSIFICATION</strong></p>
+</section>
+
+</body>
+</html>
