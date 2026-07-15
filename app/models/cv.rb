@@ -41,7 +41,9 @@ class Cv
   attr_reader :data
 
   def header_markdown
-    contact = [ location, email, linkedin, github ].compact.join(" · ")
+    # The markdown ships inside a data attribute on the CV page, so the email
+    # is written as "user [at] domain" to keep it out of the HTML source.
+    contact = [ location, email&.sub("@", " [at] "), linkedin, github ].compact.join(" · ")
     [ "# #{name}", title, contact ].join("\n")
   end
 

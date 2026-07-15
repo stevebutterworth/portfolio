@@ -8,8 +8,10 @@ RSpec.describe "Shared partials", type: :view do
     expect(rendered).to include("Work")
   end
 
-  it "footer renders the email" do
+  it "footer renders the email obfuscated, never the raw address" do
     render partial: "shared/footer"
-    expect(rendered).to include("hello@stevebutterworth.co.uk")
+    expect(rendered).to include("stevebutterworth [at] me.com")
+    expect(rendered).to include('data-controller="mailto"')
+    expect(rendered).not_to include("stevebutterworth@me.com")
   end
 end
