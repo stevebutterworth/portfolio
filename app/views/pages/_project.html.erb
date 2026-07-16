@@ -30,7 +30,6 @@
         <% project.tech.each do |t| %>
           <span class="rounded border border-line px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-ink2"><%= t %></span>
         <% end %>
-        <span class="ml-auto text-[11px] font-semibold uppercase tracking-wide text-muted"><%= project.role %></span>
       </div>
       <% if project.credit.present? %>
         <div class="mt-2 text-[11px] text-muted"><%= project.credit %></div>
