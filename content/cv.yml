@@ -11,12 +11,12 @@ pdf: "cv.pdf"
 education: "1st Class BSc (Hons) Computer Science"
 
 profile: >
-  Full-stack Ruby on Rails engineer with 20+ years of whole-product ownership, building, shipping
-  and running software end to end, from customer conversation to production and
-  long-term operation. Founder of
-  Changeflow (AI-powered monitoring SaaS, trusted by Am Law 200 firms) and the
-  engineer behind EnvironmentJob for 13 years; previously delivered live data
-  systems for The Open Championship and Indy 500 at over a million visits a day.
+  Full-stack Ruby on Rails engineer with 20+ years of whole-product ownership,
+  building, shipping and running software end to end, from customer conversation to
+  production and long-term operation. Founder of Changeflow (AI-powered monitoring
+  SaaS used by Am Law 200 firms) and the engineer behind EnvironmentJob for 13
+  years. Previously delivered live data systems for The Open Championship and Indy
+  500 at over a million visits a day.
 
   Deep Rails, with LLM pipeline work spanning classification, summarisation
   and a tool-calling chatbot. Comfortable owning
