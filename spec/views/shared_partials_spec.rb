@@ -10,6 +10,6 @@ RSpec.describe "Shared partials", type: :view do
 
   it "footer renders the email" do
     render partial: "shared/footer"
-    expect(rendered).to include("hello@stevebutterworth.co.uk")
+    expect(rendered).to include("stevebutterworth@me.com")
   end
 end
