@@ -14,6 +14,6 @@ gallery:
 quote: "I have worked with Steve on several projects including work for NTT Data, Emirates and Team GB. He is pragmatic, creative and friendly and gets the job done to a great standard and on time."
 quote_author: "Olly Vale, Digital Producer, Pulse Group"
 ---
-built several projects including reporting tools,
+I built several projects including reporting tools,
 a mobile app used for signing up delegates at conferences and live interactive
 data activations, as pictured.

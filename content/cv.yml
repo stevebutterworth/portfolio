@@ -11,22 +11,27 @@ pdf: "cv.pdf"
 education: "1st Class BSc (Hons) Computer Science"
 
 profile: >
-  Full-stack engineer with 20+ years of whole-product ownership: building, shipping
+  Full-stack Ruby on Rails engineer with 20+ years of whole-product ownership, building, shipping
   and running software end to end, from customer conversation to production and
   long-term operation. Founder of
   Changeflow (AI-powered monitoring SaaS, trusted by Am Law 200 firms) and the
   engineer behind EnvironmentJob for 13 years; previously delivered live data
   systems for The Open Championship and Indy 500 at over a million visits a day.
 
-  Deep Rails, with extensive LLM pipeline work: classification, summarisation,
-  cleaning and a tool-calling chatbot. Comfortable owning everything from
-  architecture to customer support. Quick to a working proof of concept, and
-  pragmatic about the simplest solution that ships.
+  Deep Rails, with LLM pipeline work spanning classification, summarisation
+  and a tool-calling chatbot. Comfortable owning
+  everything from architecture to customer support. Quick to prototype and
+  test ideas, and careful to keep production systems simple enough to stay
+  reliable and easy to maintain.
+
+  Agentic engineering is central to how I work. I drive coding agents under
+  strict SDLC guardrails and deliver cleaner, more reliable software far faster
+  than I could a year ago.
 
 skills:
   Backend: "Ruby on Rails, API design, Sidekiq, RSpec"
   Frontend: "Stimulus, Turbo, React, Tailwind, D3.js, Three.js"
-  Data: "PostgreSQL, Elasticsearch, Redis, Kafka"
+  Data: "PostgreSQL, Elasticsearch, Redis"
   "Operational tools": "Dashboards, admin workflows, reporting, alerting, monitoring, customer-facing reliability"
   "AI/ML support": "LLM classification, summarisation, data cleanup, prompt/workflow integration"
   "AI-assisted development": "Claude Code and Codex, driven by a suite of strict SDLC skills: task breakdown, test-first development, coding standards, security and performance audits"

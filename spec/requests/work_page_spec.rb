@@ -34,15 +34,17 @@ RSpec.describe "Work page", type: :request do
 
   it "renders the other delivered-for strip at the bottom" do
     get "/"
-    expect(response.body).to include("Other projects delivered for")
+    expect(response.body).to include("Also delivered projects for")
     expect(response.body).not_to include("Additional agency-led")
-    expect(response.body).to include("Emirates Airlines")
     expect(response.body).to include("British Airways")
-    expect(response.body).not_to include("Castrol")
+    expect(response.body).to include("Yahoo")
+    expect(response.body).to include("Castrol")
     expect(response.body).to include("St Modwen")
     expect(response.body).to include("Lenovo")
-    expect(response.body).not_to include("Yahoo")
     expect(response.body).to include("Cambridge University Press")
+
+    strip = response.body[/Also delivered projects for.*/m]
+    expect(strip).not_to include("Emirates Airlines")
   end
 
   it "adds the lightbox controller only to projects with extra media" do

@@ -17,4 +17,4 @@ A SaaS product for website change detection. It takes snapshots of web pages
 via a real browser on a schedule and uses AI to look for meaningful changes the user
 cares about. The user is notified with AI summaries of what changed and why it matters.
 Token budgeting, model selection and prompt optimisation were key to making this viable.
-Happy customers include AM Law 200 and other large enteprrise buyers.
+Happy customers include Am Law 200 law firms and other large enterprise buyers.
