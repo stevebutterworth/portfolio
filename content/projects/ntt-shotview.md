@@ -17,4 +17,4 @@ videos:
   - "https://www.youtube.com/watch?v=ebKv9aPsotI"
   - "https://www.youtube.com/watch?v=NeCOzhro_x8"
 ---
-For a decade I led a small team building the software behind NTT DATA's flagship sponsorship activation, the live NTT DATA Wall used at The Open and the Indy 500. We also built ShotView, an interactive shot-by-shot tracker for The Open's website that drew over 4 million visitors across tournament weekend and won a prestigious Sports Industry Award.
+For a decade I led a small team building the software behind NTT DATA's flagship sponsorship activation, the live NTT DATA Wall used at The Open and the Indy 500. I also built ShotView, an interactive shot-by-shot tracker for The Open's website that drew over 4 million visitors across tournament weekend and won a Sports Industry Award.
