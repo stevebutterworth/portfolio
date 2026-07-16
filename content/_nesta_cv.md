@@ -4,9 +4,9 @@
 
 # Steve Butterworth
 
-**Full-stack developer and product builder (Ruby on Rails)**
+**Full-stack developer (Ruby on Rails)**
 
-Ipswich, Suffolk (hybrid London) · stevebutterworth@me.com · stevebutterworth.co.uk · github.com/stevebutterworth · linkedin.com/in/stevebutterworth
+Ipswich, Suffolk · stevebutterworth@me.com · stevebutterworth.co.uk · github.com/stevebutterworth
 
 ## Profile
 
@@ -39,7 +39,8 @@ The UK's leading environmental jobs platform: 13 years serving the environmental
 
 - Sole engineer behind the whole product: search, advertiser and job-seeker tools, admin, CRM and reporting. Ship changes in days and they stay in production for years without a team behind them.
 - Built Elasticsearch full-text search with faceted filtering and an email alert system sending over 150k emails a week.
-- Built AI-powered import, clean-up and classification systems, and a tool monitoring new job postings across hundreds of websites.
+- Built AI-powered import, clean-up and classification systems.
+- Shipped two further standalone Rails products within the same relationship: lowcarbon.com, a second jobs website, and a job board monitoring service tracking thousands of job boards for new postings.
 - Carried the platform through every upgrade from Rails 1 to Rails 8; when something breaks, fix the cause rather than patch the symptom.
 
 ### Senior Rails Developer, LEX (contract) · 2019 - 2023
