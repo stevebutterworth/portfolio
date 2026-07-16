@@ -1,6 +1,6 @@
 ---
 title: "Environment Job"
-role: "Senior Rails Engineer"
+role: "Full-Stack Rails Engineer"
 year: 2013
 period: "2013 - 2026"
 order: 2

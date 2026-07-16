@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% page_title = content_for(:title) || "Steve Butterworth · Senior Product Engineer" %>
-    <% page_description = content_for(:description) || "Senior product engineer and Ruby on Rails specialist with over 20 years building, shipping and operating reliable web applications." %>
+    <% page_title = content_for(:title) || "Steve Butterworth · Full-Stack Rails Engineer" %>
+    <% page_description = content_for(:description) || "Full-stack Rails engineer with over 20 years building, shipping and operating reliable web applications." %>
     <% og_type = content_for(:og_type) || "website" %>
     <% og_image = content_for(:og_image) || (Project.all.first && request.base_url + asset_media(Project.all.first.cover)) %>
     <title><%= page_title %></title>

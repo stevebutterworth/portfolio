@@ -1,6 +1,6 @@
 ---
 title: "Team GB"
-role: "Senior Rails Engineer"
+role: "Full-Stack Rails Engineer"
 year: 2016
 brand: "Team GB"
 delivered_via: "Pulse Group"
