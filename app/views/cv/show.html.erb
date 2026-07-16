@@ -16,8 +16,12 @@
       <% end %>
       <button type="button" data-controller="clipboard" data-action="clipboard#copy"
               data-clipboard-text="<%= @cv.to_markdown %>"
-              class="inline-flex items-center gap-2 rounded-lg border border-line px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-ink">
-        <span data-clipboard-target="label">&#9635; Copy for AI</span>
+              class="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-line px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-ink">
+        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
+        <span class="grid text-center">
+          <span class="invisible col-start-1 row-start-1" aria-hidden="true">Copy for AI</span>
+          <span class="col-start-1 row-start-1" data-clipboard-target="label">Copy for AI</span>
+        </span>
       </button>
     </div>
 
