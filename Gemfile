@@ -43,7 +43,7 @@ gem "thruster", require: false
 gem "image_processing", "~> 1.2"
 
 # Render Markdown content to HTML [https://github.com/gjtorikian/commonmarker]
-gem "commonmarker", "~> 2.0"
+gem "commonmarker", "~> 2.9"
 
 # Match Ruby 4.0.5's bundled RDoc to avoid loading duplicate RDoc plugins.
 gem "rdoc", "7.0.4", require: false
