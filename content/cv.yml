@@ -14,23 +14,24 @@ profile: >
   Full-stack Ruby on Rails engineer with 20+ years of whole-product ownership,
   from first customer conversation to long-term production. Highlights range
   from live-event systems serving over a million visits a day to a business-critical
-  platform in production for 13 years and counting. More than 20 Rails
+  platform in production for 13 years. More than 20 Rails
   applications shipped to production for long-standing clients along the way.
   Usually two engagements at a time, always joining to stay.
 
-  Deep Rails, with extensive LLM pipeline work. Quick to prototype and test
-  ideas, careful to keep production systems simple enough to stay reliable.
+  Deep Rails, with extensive LLM pipeline work. Comfortable owning the full
+  stack and taking responsibility for the reliability of the code I ship.
   Agentic engineering is now central to how I work, driving coding agents under
-  strict SDLC guardrails, shipping clean, well-tested code to production.
+  strict SDLC guardrails to produce clean, maintainable, well-tested and
+  reliable code.
 
 skills:
   Backend: "Ruby on Rails, API design, Sidekiq, RSpec"
-  Frontend: "Stimulus, Turbo, React, Tailwind, D3.js, Three.js"
+  Frontend: "Stimulus, Turbo, Tailwind, D3.js, Three.js"
   Data: "PostgreSQL, Elasticsearch, Redis"
   "Operational tools": "Dashboards, admin workflows, reporting, alerting, monitoring, customer-facing reliability"
-  "AI/ML support": "LLM classification, summarisation, data cleanup, prompt/workflow integration"
+  "AI/LLM integration": "Classification and summarisation pipelines and tool-calling AI agents in production Rails apps; token budgeting, model selection and prompt optimisation"
   "AI-assisted development": "Claude Code and Codex, driven by a suite of strict SDLC skills covering task breakdown, test-first development, coding standards, and security and performance audits"
-  "Engineering practices": "Automated testing, CI, coding standards, security scanning, documentation, stakeholder communication"
+  "Engineering practices": "Automated testing, CI, code review, coding standards, security scanning, documentation, small-team leadership, stakeholder communication"
 
 jobs:
   - role: "Full-Stack Rails Engineer"
@@ -58,22 +59,32 @@ jobs:
       - "Now a stable, lightly maintained side product rather than an active venture."
 
   - role: "Full-Stack Rails Engineer"
-    org: "NTT Data (Contract)"
-    context: "Engaged via LEX & Pulse Group"
-    when: "2014 - 2023"
+    org: "LEX (Contract)"
+    context: "Engineering for NTT DATA's global sports sponsorships"
+    when: "2019 - 2023"
     bullets:
-      - "Delivered time-critical live data-ingestion and visualisation systems for NTT DATA sports sponsorships including The Open, Tour de France, BMW International Open and Indy 500."
-      - "Built Rails/JS/D3.js/Three.js systems powering live 3D shot tracking, public websites and large-format event displays."
-      - "For ShotView, one of our marquee apps, liaised with various stakeholders and went from creative concept to over 1 million daily visits in 4 months."
-      - "Led a small team of software engineers and worked in a wider multidisciplinary team including creative directors and designers."
+      - "Delivered time-critical data-ingestion and visualisation systems for NTT DATA sponsorships including The Open, Tour de France, BMW International Open and Indy 500, ingesting GPS, timing, weather and scoring feeds over Kafka, WebSockets and XML."
+      - "Built ShotView, live 3D shot tracking in Three.js for The Open's website, taken from creative concept to over 1 million visits a day within 4 months; won Best Use of Technology at the Sports Industry Awards 2023."
+      - "Rebuilt the NTT DataWall as a 30-metre 3D visualisation synced with the live broadcast, using real-time OCR of the feed and ActionCable to put matching player and hole analysis on screen within milliseconds."
+      - "Led a small team of software engineers within a wider multidisciplinary team of creative directors, designers and producers, owning coding standards, automated testing and code review."
 
   - role: "Full-Stack Rails Engineer"
-    org: "GSK MVOC Analyser (Contract)"
-    context: "Engaged by AI firm Retechnica"
+    org: "Retechnica (Contract)"
+    context: "AI firm; engaged to deliver a medical analytics platform"
     when: "2019"
     bullets:
-      - "Built a medical voice-of-customer analytics platform for deep exploration of the data, with interactive visualisation and PDF/PPT reporting exports."
+      - "Built a medical voice-of-customer analytics platform for GlaxoSmithKline (GSK), with data exploration, interactive visualisation and PDF/PPT reporting exports."
       - "Shipped on time and on budget with a 9/10 satisfaction score from 50+ stakeholders."
+
+  - role: "Full-Stack Rails Engineer"
+    org: "Pulse Group (Contract)"
+    context: "Digital agency delivering live data experiences for global brands"
+    when: "2013 - 2018"
+    bullets:
+      - "Developed the first generation of NTT DATA's live onsite data experiences and event websites in Rails, JavaScript and D3.js for The Open Championship."
+      - "Delivered large-format live data screens for Team GB at the Olympic Games."
+      - "Built Rails reporting tools, touch-screen interactives and a Cordova mobile events app for Emirates Airline."
+      - "Recruited and managed other engineers as projects required, reviewing every pull request and running estimation and delivery against fixed event dates."
 
   - role: "Founder & Rails Engineer"
     org: "Flumes"
@@ -82,7 +93,6 @@ jobs:
     bullets:
       - "Built a social media analytics platform from scratch, covering live social data ingestion, enrichment and interactive visualisation."
       - "Enriched social data with sentiment, gender, age and geolocation classification by integrating third-party APIs."
-      - "The platform became the technology foundation for later live-event and data-visualisation work, delivered for the likes of Cambridge University Press, Team GB and NTT Data."
 
   - role: "Full-Stack Rails Engineer"
     org: "AlphaSights"
@@ -91,7 +101,7 @@ jobs:
     bullets:
       - "Joined as first employee, set the technology direction with the founders, and recruited and led the initial Ruby on Rails engineering team."
       - "Architected and built a bespoke CRM and customer-portal system underpinning the firm's client communications."
-      - "Role covered product management, technical recruitment, coding standards, best practices, leadership, and system architecture."
+      - "Set the company's software development practices from the start, including coding standards, unit testing, continuous integration and Kanban."
 
 additional:
   - role: "Co-Founder"
@@ -99,16 +109,16 @@ additional:
     when: "2019 - Present"
     bullets:
       - "Co-founded a not-for-profit creative co-working space for remote workers, freelancers and contractors."
-  - role: "Rails & PHP Developer"
+  - role: "Independent Software Engineer"
     org: "Humble Technologies"
-    when: "2006 - 2008"
+    when: "2005 - 2008"
     bullets:
-      - "PHP and Ruby consultancy for UK clients, including lowcarbon.com and Chameleon Studios."
+      - "PHP and Ruby consultancy for UK clients."
   - role: "Senior Software Engineer"
     org: "i2, Inc. (now part of IBM)"
     when: "2002 - 2005"
     bullets:
-      - "Led the web version of the flagship analytics tool; built a Java/JS SDK letting third parties embed its charting technology."
+      - "Responsible for the web SDK of the company's flagship analytics tool; built on Java and JavaScript, it let third parties embed its charting technology in any web page."
   - role: "Software Developer"
     org: "Crystal Decisions (now part of SAP)"
     when: "1999 - 2001"

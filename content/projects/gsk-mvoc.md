@@ -1,5 +1,5 @@
 ---
-title: "GSK mVoC"
+title: "GSK"
 role: "Full-Stack Rails Engineer"
 brand: "GSK"
 delivered_via: "Retechnica"
@@ -13,5 +13,4 @@ gallery:
 quote: "I was amazed by the quality of the end result, delivered within tight deadlines. Steve was flexible, proactive and collaborative throughout."
 quote_author: "Marco Iannone, Director, Retechnica"
 ---
-Retechnica, a machine learning company, hired us to build a sophisticated dashboard and reporting tool. Packed with analysis, data visualisation and
-the ability to build PowerPoint and PDF exports.
+Retechnica, a machine learning company, hired me to build a medical voice-of-customer analysis platform and reporting tool. Packed with interactive data visualisation plus PowerPoint and PDF exports.

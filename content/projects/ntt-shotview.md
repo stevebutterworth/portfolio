@@ -6,7 +6,7 @@ delivered_via: "LEX & Pulse Group"
 year: 2022
 period: "2014 - 2023"
 order: 1
-tech: [Rails, React, ThreeJS, AWS]
+tech: [Rails, ThreeJS, AWS]
 cover: "projects/ntt-shotview/cover.png"
 gallery:
   - "projects/ntt-shotview/1.png"
