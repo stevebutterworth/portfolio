@@ -20,7 +20,7 @@
   body {
     font-family: "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif;
     font-size: 9.3pt;
-    line-height: 1.36;
+    line-height: 1.34;
     color: var(--ink);
   }
   a { color: inherit; text-decoration: none; }
@@ -51,8 +51,8 @@
   .contact span:not(:last-child)::after { content: "\00a0\00a0\00b7"; color: #9aa1af; }
 
   /* Sections */
-  section { margin-top: 14pt; }
-  section p + p { margin-top: 3pt; }
+  section { margin-top: 18pt; }
+  section p + p { margin-top: 6pt; }
   h2 {
     font-size: 8.6pt;
     font-weight: 600;
@@ -69,7 +69,7 @@
   li {
     padding-left: 9pt;
     position: relative;
-    margin-bottom: 3pt;
+    margin-bottom: 2.7pt;
   }
   li::before {
     content: "\2022";
@@ -79,7 +79,7 @@
   }
 
   /* Job entries */
-  .job { margin-bottom: 12pt; break-inside: avoid; }
+  .job { margin-bottom: 14pt; break-inside: avoid; }
   .job:last-child { margin-bottom: 0; }
   .job-line {
     display: flex;
@@ -91,6 +91,7 @@
   h3 .org { font-weight: 500; }
   .ctx {
     font-size: 8.6pt;
+    font-style: italic;
     color: var(--muted);
     margin-top: 1pt;
   }
@@ -124,21 +125,15 @@
 <section>
   <h2>Profile</h2>
   <p>Full-stack Ruby on Rails engineer with 20+ years of whole-product ownership,
-  building, shipping and running software end to end, from customer conversation to
-  production and long-term operation. That work spans everything from live systems
-  serving over a million visits a day to a business-critical platform in production
-  for 13 years and counting. Contracting since 2013 on long retained engagements,
-  always joining to stay rather than pass through. That model leaves room for
-  shorter product builds alongside, several reporting tools, warehouse
-  management software and a live footfall dashboard among them.</p>
-  <p>Deep Rails, with LLM pipeline work spanning classification, summarisation
-  and a tool-calling chatbot. Comfortable owning everything from architecture to
-  customer support. Quick to prototype and test ideas, and careful to keep
-  production systems simple enough to stay reliable and easy to maintain.</p>
-  <p>Agentic engineering has become central to how I work. I drive coding agents
-  under strict SDLC guardrails, applying judgement built over two decades of
-  shipping code to production, and deliver cleaner, more reliable software far
-  faster than I could a year ago.</p>
+  from first customer conversation to long-term production. Highlights range
+  from live-event systems serving over a million visits a day to a business-critical
+  platform in production for 13 years and counting. More than 20 Rails
+  applications shipped to production for long-standing clients along the way.
+  Usually two engagements at a time, always joining to stay.</p>
+  <p>Deep Rails, with extensive LLM pipeline work. Quick to prototype and test
+  ideas, careful to keep production systems simple enough to stay reliable.
+  Agentic engineering is now central to how I work, driving coding agents under
+  strict SDLC guardrails, shipping clean, well-tested code to production.</p>
 </section>
 
 <section>
@@ -168,7 +163,7 @@
       <li>Build and maintain systems for job search, advertiser and job-seeker tools, admin workflow, CRM and reporting. Changes ship in days and stay in production for years.</li>
       <li>Designed the data model and built Elasticsearch full-text search, faceted filtering and an email alert system sending over 150k emails/week.</li>
       <li>Built AI import, clean-up and classification systems.</li>
-      <li>Built a software tool for monitoring relevant new job postings across hundreds of websites.</li>
+      <li>Built a software tool for monitoring relevant new job postings across hundreds of websites, later spun out as its own SaaS.</li>
       <li>Full maintenance and upgrade journey from Rails 1 to Rails 8.</li>
     </ul>
   </article>
@@ -210,7 +205,7 @@
     </div>
     <p class="ctx">Engaged by AI firm Retechnica</p>
     <ul>
-      <li>Built a medical voice-of-customer dashboard with analysis, reporting, interactive visualisation and PDF/PPT export.</li>
+      <li>Built a medical voice-of-customer analytics platform for deep exploration of the data, with interactive visualisation and PDF/PPT reporting exports.</li>
       <li>Shipped on time and on budget with a 9/10 satisfaction score from 50+ stakeholders.</li>
     </ul>
   </article>
@@ -235,7 +230,7 @@
     </div>
     <p class="ctx">Information-services &amp; advisory firm, Cambridge/London</p>
     <ul>
-      <li>Joined as first employee, set the technology direction with the founders, and recruited and led the initial Ruby on Rails engineering team; the company has since grown to over 2k employees.</li>
+      <li>Joined as first employee, set the technology direction with the founders, and recruited and led the initial Ruby on Rails engineering team.</li>
       <li>Architected and built a bespoke CRM and customer-portal system underpinning the firm's client communications.</li>
       <li>Role covered product management, technical recruitment, coding standards, best practices, leadership, and system architecture.</li>
     </ul>

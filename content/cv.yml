@@ -12,24 +12,16 @@ education: "1st Class BSc (Hons) Computer Science, University of Manchester"
 
 profile: >
   Full-stack Ruby on Rails engineer with 20+ years of whole-product ownership,
-  building, shipping and running software end to end, from customer conversation to
-  production and long-term operation. That work spans everything from live systems
-  serving over a million visits a day to a business-critical platform in production
-  for 13 years and counting. Contracting since 2013 on long retained engagements,
-  always joining to stay rather than pass through. That model leaves room for
-  shorter product builds alongside, several reporting tools, warehouse
-  management software and a live footfall dashboard among them.
+  from first customer conversation to long-term production. Highlights range
+  from live-event systems serving over a million visits a day to a business-critical
+  platform in production for 13 years and counting. More than 20 Rails
+  applications shipped to production for long-standing clients along the way.
+  Usually two engagements at a time, always joining to stay.
 
-  Deep Rails, with LLM pipeline work spanning classification, summarisation
-  and a tool-calling chatbot. Comfortable owning
-  everything from architecture to customer support. Quick to prototype and
-  test ideas, and careful to keep production systems simple enough to stay
-  reliable and easy to maintain.
-
-  Agentic engineering has become central to how I work. I drive coding agents
-  under strict SDLC guardrails, applying judgement built over two decades of
-  shipping code to production, and deliver cleaner, more reliable software far
-  faster than I could a year ago.
+  Deep Rails, with extensive LLM pipeline work. Quick to prototype and test
+  ideas, careful to keep production systems simple enough to stay reliable.
+  Agentic engineering is now central to how I work, driving coding agents under
+  strict SDLC guardrails, shipping clean, well-tested code to production.
 
 skills:
   Backend: "Ruby on Rails, API design, Sidekiq, RSpec"
@@ -50,7 +42,7 @@ jobs:
       - "Build and maintain systems for job search, advertiser and job-seeker tools, admin workflow, CRM and reporting. Changes ship in days and stay in production for years."
       - "Designed the data model and built Elasticsearch full-text search, faceted filtering and an email alert system sending over 150k emails/week."
       - "Built AI import, clean-up and classification systems."
-      - "Built a software tool for monitoring relevant new job postings across hundreds of websites."
+      - "Built a software tool for monitoring relevant new job postings across hundreds of websites, later spun out as its own SaaS."
       - "Full maintenance and upgrade journey from Rails 1 to Rails 8."
 
   - role: "Founder & Rails Engineer"
@@ -80,7 +72,7 @@ jobs:
     context: "Engaged by AI firm Retechnica"
     when: "2019"
     bullets:
-      - "Built a medical voice-of-customer dashboard with analysis, reporting, interactive visualisation and PDF/PPT export."
+      - "Built a medical voice-of-customer analytics platform for deep exploration of the data, with interactive visualisation and PDF/PPT reporting exports."
       - "Shipped on time and on budget with a 9/10 satisfaction score from 50+ stakeholders."
 
   - role: "Founder & Rails Engineer"
@@ -97,7 +89,7 @@ jobs:
     context: "Information-services & advisory firm, Cambridge/London"
     when: "2008 - 2010"
     bullets:
-      - "Joined as first employee, set the technology direction with the founders, and recruited and led the initial Ruby on Rails engineering team; the company has since grown to over 2k employees."
+      - "Joined as first employee, set the technology direction with the founders, and recruited and led the initial Ruby on Rails engineering team."
       - "Architected and built a bespoke CRM and customer-portal system underpinning the firm's client communications."
       - "Role covered product management, technical recruitment, coding standards, best practices, leadership, and system architecture."
 
