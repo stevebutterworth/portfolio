@@ -15,8 +15,10 @@ profile: >
   building, shipping and running software end to end, from customer conversation to
   production and long-term operation. That work spans everything from live systems
   serving over a million visits a day to a business-critical platform in production
-  for 13 years and counting. Contracting since 2013, usually one long engagement
-  at a time, and always joining to stay rather than pass through.
+  for 13 years and counting. Contracting since 2013 on long retained engagements,
+  always joining to stay rather than pass through. Retained work rarely fills a
+  full week, so shorter product builds run alongside, warehouse management
+  software and a live footfall dashboard among them.
 
   Deep Rails, with LLM pipeline work spanning classification, summarisation
   and a tool-calling chatbot. Comfortable owning
@@ -44,6 +46,7 @@ jobs:
     context: "The UK's leading environmental jobs platform"
     when: "2013 - Present"
     bullets:
+      - "Long-running retained contract, held alongside other client work since 2013."
       - "Build and maintain systems for job search, advertiser and job-seeker tools, admin workflow, CRM and reporting. Changes ship in days and stay in production for years."
       - "Designed the data model and built Elasticsearch full-text search, faceted filtering and an email alert system sending over 150k emails/week."
       - "Built AI import, clean-up and classification systems."
