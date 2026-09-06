@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "Real project content" do
-  it "loads six projects in curated order" do
+  it "loads seven projects in curated order" do
     slugs = Project.all.map(&:slug)
-    expect(slugs).to eq(%w[ntt-shotview environmentjob emirates gsk-mvoc changeflow team-gb])
+    expect(slugs).to eq(%w[ntt-shotview environmentjob emirates gsk-mvoc changeflow team-gb flumes])
   end
 
   it "points every cover at a file that exists in public/media" do
