@@ -13,7 +13,7 @@ RSpec.describe "SEO", type: :request do
       expect(response.body).to include('<meta property="og:type" content="website">')
       expect(response.body).to include('<meta name="twitter:card" content="summary_large_image">')
 
-      expect(response.body).to include('<meta property="og:image" content="http://www.example.com/media/og/default.jpg">')
+      expect(response.body).to include('<meta property="og:image" content="http://www.example.com/media/og/home.jpg">')
     end
 
     it "sets the cv page title and og:title" do
