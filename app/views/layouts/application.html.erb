@@ -4,7 +4,7 @@
     <% page_title = content_for(:title) || "Steve Butterworth · Full-Stack Rails Engineer" %>
     <% page_description = content_for(:description) || "Full-stack Rails engineer with over 20 years building, shipping and operating reliable web applications." %>
     <% og_type = content_for(:og_type) || "website" %>
-    <% og_image = content_for(:og_image) || (Project.all.first && request.base_url + asset_media(Project.all.first.cover)) %>
+    <% og_image = content_for(:og_image) || request.base_url + "/media/og/default.jpg" %>
     <title><%= page_title %></title>
     <meta name="description" content="<%= page_description %>">
     <meta property="og:title" content="<%= page_title %>">
@@ -22,10 +22,6 @@
     <%= csp_meta_tag %>
 
     <%= yield :head %>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>

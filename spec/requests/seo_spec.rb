@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "SEO", type: :request do
   describe "titles and meta tags" do
-    it "sets the home page title, description and og tags with the first project's cover" do
+    it "sets the home page title, description and og tags with the default share image" do
       get "/"
 
       description = "Full-stack Rails engineer with over 20 years building, shipping and operating reliable web applications."
@@ -13,8 +13,7 @@ RSpec.describe "SEO", type: :request do
       expect(response.body).to include('<meta property="og:type" content="website">')
       expect(response.body).to include('<meta name="twitter:card" content="summary_large_image">')
 
-      cover = Project.all.first.cover
-      expect(response.body).to include(%(<meta property="og:image" content="http://www.example.com/media/#{cover}">))
+      expect(response.body).to include('<meta property="og:image" content="http://www.example.com/media/og/default.jpg">')
     end
 
     it "sets the cv page title and og:title" do
