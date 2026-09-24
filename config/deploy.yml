@@ -37,9 +37,10 @@ env:
   secret:
     - RAILS_MASTER_KEY
   clear:
-    # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
-    # When you start using multiple servers, you should split out job processing to a dedicated machine.
-    SOLID_QUEUE_IN_PUMA: true
+    # Solid Queue stays off: the site has no jobs, and its supervisor, dispatcher,
+    # scheduler and worker cost ~110 MB each. On this 1 GB, no-swap droplet that
+    # pushed old + new containers past memory during a deploy and hung the box for
+    # 15 minutes (OOM kill, 2026-09-24). Set SOLID_QUEUE_IN_PUMA: true if a job is added.
 
     # Set number of processes dedicated to Solid Queue (default: 1)
     # JOB_CONCURRENCY: 3
