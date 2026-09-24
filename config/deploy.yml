@@ -36,7 +36,7 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
-  clear:
+  clear: {}  # drop the {} when uncommenting a variable below
     # Solid Queue stays off: the site has no jobs, and its supervisor, dispatcher,
     # scheduler and worker cost ~110 MB each. On this 1 GB, no-swap droplet that
     # pushed old + new containers past memory during a deploy and hung the box for
