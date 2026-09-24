@@ -1,6 +1,6 @@
 ---
 title: "NTT Data Wall & ShotView"
-role: "Full-Stack Rails Engineer"
+role: "Lead Engineer, Live Data Systems"
 brand: "NTT DATA"
 delivered_via: "LEX & Pulse Group"
 year: 2022

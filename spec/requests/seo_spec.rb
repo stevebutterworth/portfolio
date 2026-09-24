@@ -5,10 +5,10 @@ RSpec.describe "SEO", type: :request do
     it "sets the home page title, description and og tags with the default share image" do
       get "/"
 
-      description = "Full-stack Rails engineer with over 20 years building, shipping and operating reliable web applications."
-      expect(response.body).to include("<title>Steve Butterworth · Full-Stack Rails Engineer</title>")
+      description = "Product engineer and tech lead with over 20 years turning raw, live data into products people use. Product-focused and test-first."
+      expect(response.body).to include("<title>Steve Butterworth · Product Engineer · Tech Lead</title>")
       expect(response.body).to include(%(<meta name="description" content="#{description}">))
-      expect(response.body).to include('<meta property="og:title" content="Steve Butterworth · Full-Stack Rails Engineer">')
+      expect(response.body).to include('<meta property="og:title" content="Steve Butterworth · Product Engineer · Tech Lead">')
       expect(response.body).to include(%(<meta property="og:description" content="#{description}">))
       expect(response.body).to include('<meta property="og:type" content="website">')
       expect(response.body).to include('<meta name="twitter:card" content="summary_large_image">')

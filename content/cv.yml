@@ -1,8 +1,8 @@
 # Steve Butterworth CV. Rendered by the /cv page and the "Copy for AI" button.
 # No em-dashes anywhere. Date ranges use a plain hyphen.
 name: "Steve Butterworth"
-title: "Full-Stack Rails Engineer"
-tagline: "Rails/Ruby · Full-stack · PostgreSQL · Elasticsearch · Stimulus · 1st Class BSc (Hons) Comp Sci"
+title: "Product Engineer · Tech Lead"
+tagline: "Tech lead · Product-focused · Test-first · Data pipelines, search and visualisation · Rails/PostgreSQL · 1st Class BSc (Hons) Comp Sci"
 location: "Ipswich, Suffolk"
 email: "stevebutterworth@me.com"
 linkedin: "https://linkedin.com/in/stevebutterworth"
@@ -11,42 +11,47 @@ pdf: "cv.pdf"
 education: "1st Class BSc (Hons) Computer Science, University of Manchester"
 
 profile: >
-  Full-stack Ruby on Rails engineer with 20+ years of whole-product ownership,
-  from first customer conversation to long-term production. Highlights range
-  from live-event systems serving over a million visits a day to a business-critical
-  platform in production for 13 years. More than 20 Rails
-  applications shipped to production for long-standing clients along the way.
-  Usually two engagements at a time, always joining to stay.
+  Product engineer and tech lead specialising in data-heavy products, with
+  20+ years taking raw data from ingestion to the screen a customer uses. Built OLAP and
+  analytics SDKs at Crystal Decisions and i2, live sports data systems for
+  NTT DATA fed by GPS, timing and scoring feeds over Kafka and WebSockets,
+  search alerts that have sent millions of emails, and LLM classification
+  pipelines in production. More than 20 applications shipped to production
+  for long-standing clients along the way.
 
-  Deep Rails, with extensive LLM pipeline work. Comfortable owning the full
-  stack and taking responsibility for the reliability of the code I ship.
-  Agentic engineering is now central to how I work, driving coding agents under
-  strict SDLC guardrails to produce clean, maintainable, well-tested and
-  reliable code.
+  Tech lead: led small engineering teams to immovable live-event deadlines,
+  setting coding standards and reviewing every pull request.
+  Product-focused: founded two products, and own work from the first
+  customer conversation to long-term production.
+  Test-first: coding agents now write most of my code, under guardrails I
+  built for test-first development, code review, and security and performance
+  audits. That leaves my time for architecture, reliability and tech debt: I
+  kept one platform healthy for 13 years, from Rails 1 to Rails 8.
 
 skills:
-  Backend: "Ruby on Rails, API design, Sidekiq, RSpec"
-  Frontend: "Stimulus, Turbo, Tailwind, D3.js, Three.js"
-  Data: "PostgreSQL, Elasticsearch, Redis"
+  Engineering: "Architecture and data modelling, test-first development, CI, code review, security scanning, performance and reliability work, tech-debt management, small-team leadership, stakeholder communication"
+  "Data pipelines": "Ingestion over Kafka, WebSockets, XML and third-party APIs; browser automation and scraping; enrichment; LLM classification and summarisation"
+  "Search and storage": "PostgreSQL, Elasticsearch, Redis"
+  Visualisation: "D3.js, Three.js, dashboards, reporting, PDF and PowerPoint exports"
+  Application: "Ruby on Rails, Stimulus, Turbo, Tailwind, API design, Sidekiq, RSpec"
   "Operational tools": "Dashboards, admin workflows, reporting, alerting, monitoring, customer-facing reliability"
   "AI/LLM integration": "Classification and summarisation pipelines and tool-calling AI agents in production Rails apps; token budgeting, model selection and prompt optimisation"
-  "AI-assisted development": "Claude Code and Codex, driven by a suite of strict SDLC skills covering task breakdown, test-first development, coding standards, and security and performance audits"
-  "Engineering practices": "Automated testing, CI, code review, coding standards, security scanning, documentation, small-team leadership, stakeholder communication"
+  "AI-assisted development": "Claude Code and Codex, driven by my own suite of SDLC skills"
 
 jobs:
-  - role: "Full-Stack Rails Engineer"
+  - role: "Product Engineer"
     org: "Environmentjob.co.uk (Contract)"
     context: "The UK's leading environmental jobs platform"
     when: "2013 - Present"
     bullets:
       - "Long-running retained contract, held alongside other client work since 2013."
+      - "Kept the platform current for 13 years, from Rails 1 to Rails 8, paying down tech debt alongside feature work."
       - "Build and maintain systems for job search, advertiser and job-seeker tools, admin workflow, CRM and reporting. Changes ship in days and stay in production for years."
-      - "Designed the data model and built Elasticsearch full-text search, faceted filtering and an email alert system sending over 150k emails/week."
+      - "Designed the data model and built Elasticsearch full-text search, faceted filtering and an email alert system that has sent millions of emails."
       - "Built AI import, clean-up and classification systems."
       - "Built a software tool for monitoring relevant new job postings across hundreds of websites, later spun out as its own SaaS."
-      - "Full maintenance and upgrade journey from Rails 1 to Rails 8."
 
-  - role: "Founder & Rails Engineer"
+  - role: "Founder & Product Engineer"
     org: "Changeflow"
     context: "Bootstrapped AI-powered website monitoring and alerting SaaS, used by Am Law 200 firms"
     when: "2023 - 2026"
@@ -55,10 +60,11 @@ jobs:
       - "Designed the core data model, monitoring pipeline, background jobs and notification workflows end to end."
       - "Integrated Puppeteer/Node.js browser automation with Rails, PostgreSQL, Redis and Faktory/Sidekiq."
       - "Built LLM pipelines for classification, summarisation and cleaning, plus an in-app AI agent."
-      - "Owned the full lifecycle, from deployment through production reliability to customer support."
+      - "Built a daily automated audit that flags suspected missed alerts, because regulated-industry customers cannot afford a silent miss."
+      - "Owned the full lifecycle, from customer conversations and pricing to deployment, production reliability and support."
       - "Now a stable, lightly maintained side product rather than an active venture."
 
-  - role: "Full-Stack Rails Engineer"
+  - role: "Lead Engineer, Live Data Systems"
     org: "LEX (Contract)"
     context: "Engineering for NTT DATA's global sports sponsorships"
     when: "2019 - 2023"
@@ -68,7 +74,7 @@ jobs:
       - "Rebuilt the NTT DataWall as a 30-metre 3D visualisation synced with the live broadcast, using real-time OCR of the feed and ActionCable to put matching player and hole analysis on screen within milliseconds."
       - "Led a small team of software engineers within a wider multidisciplinary team of creative directors, designers and producers, owning coding standards, automated testing and code review."
 
-  - role: "Full-Stack Rails Engineer"
+  - role: "Product Engineer, Data Analytics"
     org: "Retechnica (Contract)"
     context: "AI firm; engaged to deliver a medical analytics platform"
     when: "2019"
@@ -76,7 +82,7 @@ jobs:
       - "Built a medical voice-of-customer analytics platform for GlaxoSmithKline (GSK), with data exploration, interactive visualisation and PDF/PPT reporting exports."
       - "Shipped on time and on budget with a 9/10 satisfaction score from 50+ stakeholders."
 
-  - role: "Full-Stack Rails Engineer"
+  - role: "Senior Engineer, Live Data Experiences"
     org: "Pulse Group (Contract)"
     context: "Digital agency delivering live data experiences for global brands"
     when: "2013 - 2018"
@@ -86,7 +92,7 @@ jobs:
       - "Built Rails reporting tools, touch-screen interactives and a Cordova mobile events app for Emirates Airline."
       - "Recruited and managed other engineers as projects required, reviewing every pull request and running estimation and delivery against fixed event dates."
 
-  - role: "Founder & Rails Engineer"
+  - role: "Founder & Product Engineer"
     org: "Flumes"
     context: "Social media analytics and visualisation platform, founded and built 0 to 1"
     when: "2010 - 2013"

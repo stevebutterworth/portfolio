@@ -1,6 +1,6 @@
 ---
 title: "Changeflow"
-role: "Founder & Full-Stack Engineer"
+role: "Founder & Product Engineer"
 year: 2023
 period: "2023 - 2026"
 order: 6

@@ -1,6 +1,6 @@
 ---
 title: "Flumes"
-role: "Founder & Rails Engineer"
+role: "Founder & Product Engineer"
 year: 2013
 period: "2010 - 2013"
 order: 8

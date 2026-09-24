@@ -1,6 +1,6 @@
 ---
 title: "Emirates Airlines"
-role: "Full-Stack Rails Engineer"
+role: "Product Engineer"
 brand: "Emirates Airlines"
 delivered_via: "Pulse Group"
 year: 2015

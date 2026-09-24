@@ -4,9 +4,10 @@ RSpec.describe "Work page", type: :request do
   it "renders the hero and a row per project with credit and quote" do
     get "/"
     expect(response).to have_http_status(:ok)
-    expect(response.body).to include("Full-Stack Rails Engineer")
-    expect(response.body).to include("I architect, build and operate reliable web applications.")
-    expect(response.body).to include("Over 20 years of whole-product ownership")
+    expect(response.body).to include("Product Engineer · Tech Lead")
+    expect(response.body).to include("I turn raw, live data into products people use every day.")
+    expect(response.body).to include("Tech lead, product-focused and test-first")
+    expect(response.body).not_to include("Available for work")
     expect(response.body).not_to include("creative technologist")
     expect(response.body).not_to include("interactive installations")
     expect(response.body).to include("Selected work")

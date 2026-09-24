@@ -1,6 +1,6 @@
 ---
 title: "GSK"
-role: "Full-Stack Rails Engineer"
+role: "Product Engineer, Data Analytics"
 brand: "GSK"
 delivered_via: "Retechnica"
 year: 2019

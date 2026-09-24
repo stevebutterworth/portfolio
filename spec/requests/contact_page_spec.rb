@@ -1,12 +1,12 @@
 require "rails_helper"
 
 RSpec.describe "Contact page", type: :request do
-  it "renders the pitch, availability chip and a web3forms contact form" do
+  it "renders the pitch, contact details and a web3forms contact form" do
     get "/contact"
     expect(response).to have_http_status(:ok)
 
     expect(response.body).to include("Let&rsquo;s build something.")
-    expect(response.body).to include("Available for work")
+    expect(response.body).not_to include("Available for work")
     expect(response.body).to include("stevebutterworth@me.com")
     expect(response.body).to include("Ipswich, Suffolk")
     expect(response.body).to include("https://www.linkedin.com/in/stevebutterworth/")
