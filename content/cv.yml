@@ -100,7 +100,7 @@ jobs:
       - "Built a social media analytics platform from scratch, covering live social data ingestion, enrichment and interactive visualisation."
       - "Enriched social data with sentiment, gender, age and geolocation classification by integrating third-party APIs."
 
-  - role: "Full-Stack Rails Engineer"
+  - role: "Head of Technology"
     org: "AlphaSights"
     context: "Information-services & advisory firm, Cambridge/London"
     when: "2008 - 2010"
